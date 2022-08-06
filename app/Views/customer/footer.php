@@ -42,7 +42,7 @@
                                     <ul>
                                         <li>
                                            <div class="icon"><i class="flaticon-telephone-1"></i></div>
-                                            <p class="number"><a href="tel:12027993245">+120 279 932 45</a></p> 
+                                            <p class="number"><a href="tel:12027993245">+62 8146 1216 787</a></p> 
                                         </li>
                                     </ul>
                                 </div>
