@@ -55,7 +55,7 @@
                                     <ul>
                                         <li>
                                            <div class="icon"><i class="flaticon-mail"></i></div>
-                                            <p><a href="mailto:support@vegen.com">umkmbatulayangbdg2022@gmail.com</a></p>
+                                            <p><a href="mailto:support@vegen.com">auliananda2022@gmail.com</a></p>
                                         </li>
                                     </ul>
                                 </div>
