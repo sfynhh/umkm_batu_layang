@@ -102,10 +102,10 @@
                                             <li class="<?php echo (isset($activehome))? $activehome:''; ?>"><a href="<?php echo base_url('Home') ?>">Home</a>
                                             </li>
                                             <li class="<?php echo (isset($activeprod))? $activeprod:''; ?>"><a href="<?php echo base_url('Produk/all/all') ?>">Produk Kami</a></li>
-                                  
-                                            <li><a href="about-us.html">Tentang Kami</a></li>
+                                            <li class="<?php echo (isset($activemitra))? $activemitra:''; ?>"><a href="<?php echo base_url('Detail_Mitra') ?>">Mitra</a></li>
+                                            <li class="<?php echo (isset($activetk))? $activetk:''; ?>"><a href="<?php echo base_url('TentangKami') ?>">Tentang Kami</a></li>
                                            
-                                            <li><a href="contact.html">Kontak</a></li>
+                                            <li class="<?php echo (isset($activektk))? $activektk:''; ?>"><a href="<?php echo base_url('Contact') ?>">Kontak</a></li>
                                         </ul>
                                     </div>
                                 </nav>

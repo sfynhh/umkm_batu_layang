@@ -29,8 +29,27 @@ class Produk extends BaseController
 				'titletab'=>'Produk',
 				'activeprod'=>'active'
 				];
-
-
+		echo view('customer/headnav', $data);
+	}
+	public function tentangkami()
+	{	$data=[ 'content'=>'customer/tentangkami/tentangkami',
+				'titletab'=>'Tentang Kami',
+				'activetk'=>'active'
+				];
+		echo view('customer/headnav', $data);
+	}
+	public function contact()
+	{	$data=[ 'content'=>'customer/contact/contact',
+				'titletab'=>'Contact',
+				'activektk'=>'active'
+				];
+		echo view('customer/headnav', $data);
+	}
+	public function detailmitra()
+	{	$data=[ 'content'=>'customer/Mitra/detail_mitra',
+				'titletab'=>'Detail Mitra',
+				'activemitra'=>'active'
+				];
 		echo view('customer/headnav', $data);
 	}
 
