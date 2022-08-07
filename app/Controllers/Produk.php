@@ -1,57 +1,32 @@
-<?php
-
+<?php 
 namespace App\Controllers;
 
 //load model database yang akan digunakan yaitu akun
-// use App\Models\AkunModel;
-// use Phpml\Association\Apriori;
+use App\Models\ProdukModel;// use Phpml\Association\Apriori;
 
 class Produk extends BaseController
 {
 	public function __construct()
     {
-		//session_start();
-        //load kelas AkunModel
-        //$this->akunmodel = new AkunModel();
+		$this->PM = new ProdukModel();
     }
-
-	
-	public function index()
-	{	$data=[ 'content'=>'customer/Home',
-				'titletab'=>'Home',
-				'activehome'=>'active'
-				];
-
-		echo view('customer/headnav', $data);
-	}
-	public function produk_all($kategori, $toko)
+    public function produk_all($kategori, $toko)
 	{	$data=[ 'content'=>'customer/produk/produk_all',
 				'titletab'=>'Produk',
-				'activeprod'=>'active'
+				'activeprod'=>'active',
+				'kategorisearch'=>$this->PM->getkategori(),
+				'datacontent'=>[]
 				];
 		echo view('customer/headnav', $data);
 	}
-	public function tentangkami()
-	{	$data=[ 'content'=>'customer/tentangkami/tentangkami',
-				'titletab'=>'Tentang Kami',
-				'activetk'=>'active'
-				];
-		echo view('customer/headnav', $data);
+	public function search()
+	{
+		return redirect()->to(base_url('ProdukSearch/'.$_POST['kategori'].'/'.$_POST['namaproduk'])); 
 	}
-	public function contact()
-	{	$data=[ 'content'=>'customer/contact/contact',
-				'titletab'=>'Contact',
-				'activektk'=>'active'
-				];
-		echo view('customer/headnav', $data);
-	}
-	public function detailmitra()
-	{	$data=[ 'content'=>'customer/Mitra/detail_mitra',
-				'titletab'=>'Detail Mitra',
-				'activemitra'=>'active'
-				];
-		echo view('customer/headnav', $data);
-	}
-
-
+	public function produksearch($kategori, $nama)
+	{
+		
+	}	
 }
+
+?>

@@ -1,6 +1,5 @@
 <!-- main-area -->
         <main>
-
             <!-- slider-area -->
             <section class="slider-area" data-background="img/bg/slider_area_bg.jpg">
                 <div class="container custom-container">
@@ -56,7 +55,7 @@ slider/slider_banner03.jpg" alt=""></a>
                 <div class="container custom-container">
                     <div class="slider-category-wrap">
                         <div class="row category-active">
-                            <div class="col-lg-2">
+                            <div class="col-lg-5">
                                 <div class="category-item active">
                                     <a href="shop.html" class="category-link"></a>
                                     <div class="category-thumb">
@@ -68,7 +67,7 @@ product/category_img01.png" alt="">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-5">
                                 <div class="category-item">
                                     <a href="shop.html" class="category-link"></a>
                                     <div class="category-thumb">
@@ -80,54 +79,8 @@ product/category_img02.png" alt="">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-2">
-                                <div class="category-item">
-                                    <a href="shop.html" class="category-link"></a>
-                                    <div class="category-thumb">
-                                        <img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/category_img03.png" alt="">
-                                    </div>
-                                    <div class="category-content">
-                                        <h6 class="title">Fresh Nuts</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="category-item">
-                                    <a href="shop.html" class="category-link"></a>
-                                    <div class="category-thumb">
-                                        <img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/category_img04.png" alt="">
-                                    </div>
-                                    <div class="category-content">
-                                        <h6 class="title">Cleaning</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="category-item">
-                                    <a href="shop.html" class="category-link"></a>
-                                    <div class="category-thumb">
-                                        <img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/category_img05.png" alt="">
-                                    </div>
-                                    <div class="category-content">
-                                        <h6 class="title">fresh meat</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="category-item">
-                                    <a href="shop.html" class="category-link"></a>
-                                    <div class="category-thumb">
-                                        <img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/category_img06.png" alt="">
-                                    </div>
-                                    <div class="category-content">
-                                        <h6 class="title">Powders</h6>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                          
                         </div>
                     </div>
                 </div>

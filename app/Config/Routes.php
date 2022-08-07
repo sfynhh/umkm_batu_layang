@@ -32,12 +32,14 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Produk::index');
-$routes->get('Home', 'Produk::index');
-$routes->get('TentangKami', 'Produk::tentangkami');
-$routes->get('Contact', 'Produk::contact');
-$routes->get('Detail_Mitra', 'Produk::detailmitra');
+$routes->get('/', 'Home::index');
+$routes->get('Home', 'Home::index');
+$routes->get('TentangKami', 'Home::tentangkami');
+$routes->get('Contact', 'Home::contact');
+$routes->get('Detail_Mitra', 'Mitra::detailmitra');
+$routes->get('Mitra', 'Mitra::index');
 $routes->get('Produk/(:any)/(:any)', 'Produk::produk_all/$1/$2');
+$routes->get('ProdukSearch/(:any)/(:any)', 'Produk::produksearch/$1/$2');
 
 /*
  * --------------------------------------------------------------------
