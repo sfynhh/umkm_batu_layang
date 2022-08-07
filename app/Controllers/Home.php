@@ -21,7 +21,9 @@ class Home extends BaseController
 				'titletab'=>'Home',
 				'activehome'=>'active',
 				'kategorisearch'=>$this->PM->getkategori(),
-				'datacontent'=>[]
+				'datacontent'=>[ 
+								'kategori'=>$this->PM->getkategori(),
+								]
 				];
 		//print_r($data['Kategori']);
 		echo view('customer/headnav', $data);

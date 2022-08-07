@@ -4,9 +4,9 @@
             <section class="slider-area" data-background="img/bg/slider_area_bg.jpg">
                 <div class="container custom-container">
                     <div class="row">
-                        <div class="col-7">
+                        <div class="col">
                             <div class="slider-active">
-                                <div class="single-slider slider-bg" data-background="<?php echo base_url('') ?>/assetcustomer/img/slider/slider_bg1.jpg">
+                                <div class="single-slider slider-bg" data-background="<?php echo base_url('') ?>/assetcustomer/img/slider/slider_bg2.jpg">
                                     <div class="slider-content">
                                         <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">top deal !</h5>
                                         <h2 class="title" data-animation="fadeInUp" data-delay=".4s">organic food</h2>
@@ -14,7 +14,7 @@
                                         <a href="shop.html" class="btn rounded-btn" data-animation="fadeInUp" data-delay=".8s">Shop Now</a>
                                     </div>
                                 </div>
-                                <div class="single-slider slider-bg" data-background="img/slider/slider_bg01.jpg">
+                                <div class="single-slider slider-bg" data-background="<?php echo base_url('') ?>/assetcustomer/img/slider/slider_bg1.jpg">
                                     <div class="slider-content">
                                         <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">Real simple !</h5>
                                         <h2 class="title" data-animation="fadeInUp" data-delay=".4s">Time Grocery</h2>
@@ -22,7 +22,7 @@
                                         <a href="shop.html" class="btn rounded-btn" data-animation="fadeInUp" data-delay=".8s">Shop Now</a>
                                     </div>
                                 </div>
-                                <div class="single-slider slider-bg" data-background="img/slider/slider_bg01.jpg">
+                                <div class="single-slider slider-bg" data-background="<?php echo base_url('') ?>/assetcustomer/img/slider/slider_bg3.jpg">
                                     <div class="slider-content">
                                         <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">top deal !</h5>
                                         <h2 class="title" data-animation="fadeInUp" data-delay=".4s">organic food</h2>
@@ -32,55 +32,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <div class="slider-banner-img mb-20">
-                                <a href="shop.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-slider/slider_banner01.jpg" alt=""></a>
-                            </div>
-                            <div class="slider-banner-img">
-                                <a href="shop.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-slider/slider_banner02.jpg" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="slider-banner-img">
-                                <a href="shop.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-slider/slider_banner03.jpg" alt=""></a>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
 
                 <!-- category-area -->
                 <div class="container custom-container">
-                    <div class="slider-category-wrap">
+                    <div class="slider-category-wrap" >
                         <div class="row category-active">
+                        <?php foreach ($kategori as $val){ ?>
                             <div class="col-lg-5">
                                 <div class="category-item active">
                                     <a href="shop.html" class="category-link"></a>
                                     <div class="category-thumb">
-                                        <img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/category_img01.png" alt="">
+                                        <img src="<?php echo base_url('assetcustomer/img/'.$val->foto_kategori) ?>" alt="" style="width: 120px;height: 120px;">
                                     </div>
                                     <div class="category-content">
-                                        <h6 class="title">Juice & Drinks</h6>
+                                        <h6 class="title"><?php echo $val->nama_kategori ?></h6>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-5">
-                                <div class="category-item">
-                                    <a href="shop.html" class="category-link"></a>
-                                    <div class="category-thumb">
-                                        <img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/category_img02.png" alt="">
-                                    </div>
-                                    <div class="category-content">
-                                        <h6 class="title">Vegetables</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                          
+
+                        <?php } ?>
+                       
+
                         </div>
                     </div>
                 </div>

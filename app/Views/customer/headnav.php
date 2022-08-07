@@ -39,7 +39,7 @@
             <div class="header-search-area">
                 <div class="container custom-container">
                     <div class="row align-items-center">
-                        <div class="col-xl-2 col-lg-3 d-none d-lg-block">
+                        <div class="col-xl-1 col-lg-3 d-none d-lg-block">
                             <div class="logo">
                                 <a href="<?php echo base_url() ?>"><img style="height: auto;width: 115px;"src="<?php echo base_url('') ?>/assetcustomer/img/logo/umkmlogo.png" alt="Logo"></a>
                             </div>

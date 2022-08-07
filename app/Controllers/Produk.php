@@ -15,7 +15,7 @@ class Produk extends BaseController
 				'titletab'=>'Produk',
 				'activeprod'=>'active',
 				'kategorisearch'=>$this->PM->getkategori(),
-				'datacontent'=>[]
+				
 				];
 		echo view('customer/headnav', $data);
 	}
