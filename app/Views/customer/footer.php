@@ -84,13 +84,8 @@
             </div>
         </footer>
         <!-- footer-area-end -->
-
-
-
-
-
-		<!-- JS here -->
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+          <!-- JS here -->
+      <!--   <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
         <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap5.min.js"></script>
         <script src="<?php echo base_url('') ?>/assetcustomer/js/vendor/jquery-3.6.0.min.js"></script>
@@ -106,5 +101,10 @@
         <script src="<?php echo base_url('') ?>/assetcustomer/js/aos.js"></script>
         <script src="<?php echo base_url('') ?>/assetcustomer/js/plugins.js"></script>
         <script src="<?php echo base_url('') ?>/assetcustomer/js/main.js"></script>
-    </body>
-</html>
+
+
+
+
+		
+
+        

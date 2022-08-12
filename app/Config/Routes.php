@@ -40,6 +40,7 @@ $routes->get('Detail_Mitra', 'Mitra::detailmitra');
 $routes->get('Mitra', 'Mitra::index');
 $routes->get('Produk/(:any)/(:any)', 'Produk::produk_all/$1/$2');
 $routes->get('ProdukSearch/(:any)/(:any)', 'Produk::produksearch/$1/$2');
+$routes->get('Produkjson', 'Produk::produk_json');
 
 /*
  * --------------------------------------------------------------------

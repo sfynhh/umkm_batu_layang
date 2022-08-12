@@ -26,28 +26,35 @@ class ProdukModel extends Model
     public function getAll(){
         return $this->findAll();
     }
+    public function getprodukall(){
 
-    //untuk mendapatkan data kos sesuai dengan ID untuk diedit
-    public function editData($id){
-        $dbResult = $this->db->query("SELECT * FROM menu WHERE id_menu = ?", array($id)); 
-        return $dbResult->getResult();
+    $query = $this->db->table('m_produk')->select('*')
+            ->join('m_mitra', 'm_produk.produk_id_mitra=m_mitra.id_mitra')->get()->getResultArray();
+    return $query;
+
     }
 
-    //untuk mendapatkan data kos sesuai dengan ID untuk diedit
-    public function updateData(){
-        $idmenu = $_POST['idmenu'];
-        $namamenu = $_POST['namamenu'];
-        $harga = $_POST['harga'];
-        $status = $_POST['status'];
-        $kategori = $_POST['kategori'];
-        $hasil = $this->db->query("UPDATE menu SET id_menu = ?, nama_menu=?, harga=?, status=?, kategori=? WHERE id_menu =? ", array($idmenu, $namamenu, $harga, $status, $kategori, $idmenu));
-        return $hasil;
-    }
+    // //untuk mendapatkan data kos sesuai dengan ID untuk diedit
+    // public function editData($id){
+    //     $dbResult = $this->db->query("SELECT * FROM menu WHERE id_menu = ?", array($id)); 
+    //     return $dbResult->getResult();
+    // }
 
-    //untuk menghapus data kos sesuai ID yang dipilih
-    public function deleteData($id){
-        $hasil = $this->db->query("DELETE FROM Menu WHERE id_menu =? ", array($id));
-        return $hasil;
-    }
+    // //untuk mendapatkan data kos sesuai dengan ID untuk diedit
+    // public function updateData(){
+    //     $idmenu = $_POST['idmenu'];
+    //     $namamenu = $_POST['namamenu'];
+    //     $harga = $_POST['harga'];
+    //     $status = $_POST['status'];
+    //     $kategori = $_POST['kategori'];
+    //     $hasil = $this->db->query("UPDATE menu SET id_menu = ?, nama_menu=?, harga=?, status=?, kategori=? WHERE id_menu =? ", array($idmenu, $namamenu, $harga, $status, $kategori, $idmenu));
+    //     return $hasil;
+    // }
+
+    // //untuk menghapus data kos sesuai ID yang dipilih
+    // public function deleteData($id){
+    //     $hasil = $this->db->query("DELETE FROM Menu WHERE id_menu =? ", array($id));
+    //     return $hasil;
+    // }
     
 }

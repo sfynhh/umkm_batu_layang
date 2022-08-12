@@ -8,25 +8,25 @@
                             <div class="slider-active">
                                 <div class="single-slider slider-bg" data-background="<?php echo base_url('') ?>/assetcustomer/img/slider/slider_bg2.jpg">
                                     <div class="slider-content">
-                                        <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">top deal !</h5>
-                                        <h2 class="title" data-animation="fadeInUp" data-delay=".4s">organic food</h2>
-                                        <p data-animation="fadeInUp" data-delay=".6s">Get up to 50% OFF Today Only</p>
+                                        <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">top deal is cooming soon!</h5>
+                                        <h2 class="title" data-animation="fadeInUp" data-delay=".4s">Traditional food</h2>
+                                        <p data-animation="fadeInUp" data-delay=".6s">Promos are coming soon</p>
                                         <a href="shop.html" class="btn rounded-btn" data-animation="fadeInUp" data-delay=".8s">Shop Now</a>
                                     </div>
                                 </div>
                                 <div class="single-slider slider-bg" data-background="<?php echo base_url('') ?>/assetcustomer/img/slider/slider_bg1.jpg">
                                     <div class="slider-content">
-                                        <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">Real simple !</h5>
-                                        <h2 class="title" data-animation="fadeInUp" data-delay=".4s">Time Grocery</h2>
-                                        <p data-animation="fadeInUp" data-delay=".6s">Get up to 50% OFF Today Only</p>
+                                         <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">top deal is cooming soon!</h5>
+                                        <h2 class="title" data-animation="fadeInUp" data-delay=".4s">Traditional food</h2>
+                                        <p data-animation="fadeInUp" data-delay=".6s">Promos are coming soon</p>
                                         <a href="shop.html" class="btn rounded-btn" data-animation="fadeInUp" data-delay=".8s">Shop Now</a>
                                     </div>
                                 </div>
                                 <div class="single-slider slider-bg" data-background="<?php echo base_url('') ?>/assetcustomer/img/slider/slider_bg3.jpg">
                                     <div class="slider-content">
-                                        <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">top deal !</h5>
-                                        <h2 class="title" data-animation="fadeInUp" data-delay=".4s">organic food</h2>
-                                        <p data-animation="fadeInUp" data-delay=".6s">Get up to 50% OFF Today Only</p>
+                                         <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">top deal is cooming soon!</h5>
+                                        <h2 class="title" data-animation="fadeInUp" data-delay=".4s">Traditional food</h2>
+                                        <p data-animation="fadeInUp" data-delay=".6s">Promos are coming soon</p>
                                         <a href="shop.html" class="btn rounded-btn" data-animation="fadeInUp" data-delay=".8s">Shop Now</a>
                                     </div>
                                 </div>

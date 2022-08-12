@@ -9,17 +9,15 @@
                             <aside class="shop-sidebar">
                                 <div class="widget shop-widget">
                                     <div class="shop-widget-title">
-                                        <h6 class="title">Product Categories</h6>
+                                        <h6 class="title">Kategori Produk</h6>
                                     </div>
                                     <div class="shop-cat-list">
                                         <ul>
-                                            <li><a href="shop.html">Accessories <span>+</span></a></li>
-                                            <li><a href="shop.html">Vegetables <span>+</span></a></li>
-                                            <li><a href="shop.html">Spices Food <span>+</span></a></li>
-                                            <li><a href="shop.html">Dairy <span>+</span></a></li>
-                                            <li><a href="shop.html">Baby Food <span>+</span></a></li>
-                                            <li><a href="shop.html">Kitchen Accessories <span>+</span></a></li>
-                                        </ul>
+                                            <?php foreach ($kategori as $val){ ?>
+                                            <li><a href="shop.html"><?php echo $val->nama_kategori ?><span><i class="fa-solid fa-magnifying-glass-arrow-right"></i></span></a></li>
+                                                                                    
+                                            <?php } ?>
+                                            </ul>
                                     </div>
                                 </div>
                                 
@@ -29,10 +27,10 @@
                                     </div>
                                     <div class="shop-cat-list">
                                         <ul>
-                                            <li><a href="shop.html">Adara <span>+</span></a></li>
-                                            <li><a href="shop.html">Carnation <span>+</span></a></li>
-                                            <li><a href="shop.html">We Beyond <span>+</span></a></li>
-                                            <li><a href="shop.html">Agrifram <span>+</span></a></li>
+                                            <?php foreach ($mitra as $val): ?>
+                                               <li><a href="shop.html"><?php echo $val->nama_mitra ?> <span><i class="fa-solid fa-magnifying-glass-arrow-right"></i></span></a></li> 
+                                            <?php endforeach ?>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -48,20 +46,20 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                             <div class="shop-discount-area">
                                 <div class="discount-content shop-discount-content">
                                     <span>healthy food</span>
-                                    <h4 class="title"><a href="shop.html">organic farm for ganic</a></h4>
-                                    <p>Super Offer TO 50% OFF</p>
+                                    <h4 class="title"><a href="shop.html">Traditional Food</a></h4>
+                                    <p>Super Offer is coming soon</p>
                                     <a href="shop.html" class="btn rounded-btn">shop now</a>
                                 </div>
                             </div>
                             <div class="shop-top-meta mb-30">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-7">
-                                        <div class="shop-top-left">
+                                       <!--  <div class="shop-top-left">
                                             <ul>
                                                 <li><a href="#"><i class="fas fa-bars"></i> FILTER</a></li>
                                                 <li>Showing 1–9 of 80 results</li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="col-md-6 col-sm-5">
                                         <div class="shop-top-right">
@@ -79,347 +77,13 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                                 </div>
                             </div>
                             <div class="shop-products-wrap">
-                                <div class="row justify-content-center">
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch">New</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products09.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Uncle Orange Bens Ready Pice</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.50 - 1 kg</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch discount">25%</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products02.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Dannon Max Vanla Ice Cream</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.50 - 1 lt</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch discount">25%</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products10.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Walnuts Max Vanla Greek Pice</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.50 - 1 kg</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch">New</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products04.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Uncle Bens Vanla Ready Pice</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.50 - 1 kg</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch discount">25%</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products11.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Capsicum Vanla Ben Ready Pice</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.50 - 1 kg</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch">New</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products06.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Potato Max Vanla Greek Pice</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.99 - 1 kg</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch discount">25%</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products03.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Walnuts Max Vanla Greek Pice</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.50 - 1 kg</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch">New</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products12.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Strawberry Vanla Ready Pice</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.50 - 1 kg</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch discount">25%</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products01.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Uncle Bens Vanla Ready Pice</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.50 - 1 kg</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch discount">25%</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products15.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Broccoli Bens Vanla Ready Pice</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.50 - 1 kg</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch">New</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products13.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Aubergine Bens Ready Pice</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.50 - 1 kg</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-4 col-sm-6">
-                                        <div class="sp-product-item">
-                                            <div class="sp-product-thumb">
-                                                <span class="batch discount">25%</span>
-                                                <a href="shop-details.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sp_products14.png" alt=""></a>
-                                            </div>
-                                            <div class="sp-product-content">
-                                                <div class="rating">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <h6 class="title"><a href="shop-details.html">Onion Bens Vanla Ready Pice</a></h6>
-                                                <span class="product-status">IN Stock</span>
-                                                <div class="sp-cart-wrap">
-                                                    <form action="#">
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <p>$1.50 - 1 kg</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="row justify-content-center kontenproduk" id="kontenproduk">
+                    
+                                       
                                 </div>
                             </div>
                             <div class="pagination-wrap">
-                                <ul>
+                                <!-- <ul>
                                     <li class="prev"><a href="shop.html">Prev</a></li>
                                     <li><a href="shop.html">1</a></li>
                                     <li class="active"><a href="shop.html">2</a></li>
@@ -428,7 +92,7 @@ product/sp_products14.png" alt=""></a>
                                     <li><a href="shop.html">...</a></li>
                                     <li><a href="shop.html">10</a></li>
                                     <li class="next"><a href="shop.html">Next</a></li>
-                                </ul>
+                                </ul> -->
                             </div>
                         </div>
                     </div>
@@ -437,4 +101,124 @@ product/sp_products14.png" alt=""></a>
             <!-- shop-area-end -->
 
         </main>
-        <!-- main-area-end -->
+        
+        <script type="">
+
+            
+            $(document).ready(function(){
+                load_produk();
+            });
+            function load_produk() {
+                $.ajax({
+                    type : 'GET',
+                    url : "<?php echo site_url(); ?>/Produk/produk_json",
+                    dataType : 'json',
+                    success :  function(res){
+                        var html='';
+                        $.each(res, function(key, value) {
+                             var image = "<?= base_url('assetcustomer/img') ?>/" + value.foto_depan;
+                             html += `<a href="shop-details.html">
+                                        <div class="col-xl-3 col-md-4 col-sm-6 subkonten">
+                                            <div class="sp-product-item">
+                                                <div class="sp-product-thumb">
+                                                <span class="batch">New</span><img src="`+image+`" style="width: 192px;height: 143px;" alt="">
+                                                </div>
+                                                <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </a>`
+                        });            
+                          
+                        $('#kontenproduk').html(html);
+
+                         $(function () {
+                            var numberOfitem=$('.kontenproduk .subkonten ').length;
+                            var limitPerpage=8;
+                            var totalPages=Math.ceil(numberOfitem/limitPerpage);
+                            var paginationSize=7;
+                            var currentPage;
+
+                            function showPage(whichPage) {
+                                if(whichPage<1 || whichPage>totalPages) return false;
+
+                                currentPage = whichPage;
+
+                                $('.kontenproduk .subkonten ').hide().slice((currentPage-1)*limitPerpage, currentPage*limitPerpage).show();
+                                $('.pagination-wrap li').slice(1,-1).remove();
+
+                                // var halaman=1;
+                                // var cek=getPageList(totalPages, currentPage, paginationSize);
+                                // console.log(cek);
+                                getPageList(totalPages, currentPage, paginationSize).forEach(item => {
+
+                                  $("<li>").addClass("page-item").addClass(item ? "current-page" : "dots").toggleClass("activepage", item === currentPage).append($("<a>").addClass("page-link")
+                                  .attr({href: "javascript:void(0)"}).text(item || "...")).insertBefore(".next");
+
+                                });
+
+                                 $(".prev").toggleClass("disable", currentPage === 1);
+                                $(".next").toggleClass("disable", currentPage === totalPages);
+                                return true;
+                            }
+                           console.log(numberOfitem); 
+
+                            $(".pagination-wrap").append(
+                                 $("<ul>").append(
+                                    $("<li>").addClass("page-item").addClass("prev").append($("<a>").attr({href: "javascript:void(0)"}).text("Prev")),
+                                 $("<li>").addClass("page-item").addClass("next").append($("<a>").attr({href: "javascript:void(0)"}).text("Next"))
+                                    ));
+
+                            $(".kontenproduk").show();
+                            showPage(1); 
+                            $(document).on("click", ".pagination-wrap li.current-page:not(.activepage)", function(){
+                                return showPage(+$(this).text());
+                              });
+                            
+                              $(".next").on("click", function(){
+                                return showPage(currentPage + 1);
+                              });
+                            
+                              $(".prev").on("click", function(){
+                                return showPage(currentPage - 1);
+                              });      
+                        });
+                        
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                            // alert(xhr.status);
+                            alert(thrownError);
+                          }
+                });
+            }
+
+             function getPageList(totalPages, page, maxLength){
+                  function range(start, end){
+                    return Array.from(Array(end - start + 1), (_, i) => i + start);
+                  }
+                
+                  var sideWidth = maxLength < 9 ? 1 : 2;
+                  var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1;
+                  var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1;
+                  console.log(sideWidth);
+                
+                  if(totalPages <= maxLength){
+                    return range(1, totalPages);
+                  }
+                
+                  if(page <= maxLength - sideWidth - 1 - rightWidth){
+                    return range(1, maxLength - sideWidth - 1).concat(0, range(totalPages - sideWidth + 1, totalPages));
+                  }
+                
+                  if(page >= totalPages - sideWidth - 1 - rightWidth){
+                    return range(1, sideWidth).concat(0, range(totalPages- sideWidth - 1 - rightWidth - leftWidth, totalPages));
+                  }
+                
+                  return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
+                }
+
+           
+
+            
+        </script>
+        <!-- main-area-end --> 

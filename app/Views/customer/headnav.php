@@ -16,7 +16,7 @@
         <!-- Datatables -->
        <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap5.min.css" rel="stylesheet">
         <!-- Jquery masking -->
-        <script src="<?= base_url('jquery/jquery.mask.js') ?>"></script>
+        <!-- <script src="<?= base_url('jquery/jquery.mask.js') ?>"></script> -->
 
         <!-- CSS here -->
         <link rel="stylesheet" href="<?php echo base_url('') ?>/assetcustomer/css/bootstrap.min.css">
@@ -30,6 +30,13 @@
         <link rel="stylesheet" href="<?php echo base_url('') ?>/assetcustomer/css/default.css">
         <link rel="stylesheet" href="<?php echo base_url('') ?>/assetcustomer/css/style.css">
         <link rel="stylesheet" href="<?php echo base_url('') ?>/assetcustomer/css/responsive.css">
+        <link rel="stylesheet" href="<?php echo base_url('') ?>/assetcustomer/fontawesome/css/fontawesome.min.css">
+         <link rel="stylesheet" href="<?php echo base_url('') ?>/assetcustomer/fontawesome/css/solid.min.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+      
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     </head>
     <body>
 <!-- header-area -->
@@ -93,9 +100,10 @@
                                     <div class="header-category d-none d-lg-block">
                                         <a href="#" class="cat-toggle"><i class="fas fa-bars"></i>Lihat Toko<i class="fas fa-angle-down"></i></a>
                                         <ul class="category-menu">
-                                            <li><a href="shop.html"><i class="flaticon-cherry"></i> Fresh Fruits</a></li>
-                                            <li><a href="shop.html"><i class="flaticon-fish"></i> Fresh Fish</a></li>
+                                            <?php foreach($mitra as $val){ ?>
+                                            <li><a href="shop.html"><!-- <i class="flaticon-cherry"> --></i><?php echo $val->nama_mitra ?></a></li>
                                             
+                                            <?php } ?>
                                         </ul>
                                     </div>
                                     <div class="navbar-wrap main-menu d-none d-lg-flex">
@@ -105,7 +113,6 @@
                                             <li class="<?php echo (isset($activeprod))? $activeprod:''; ?>"><a href="<?php echo base_url('Produk/all/all') ?>">Produk Kami</a></li>
                                             <li class="<?php echo (isset($activemitra))? $activemitra:''; ?>"><a href="<?php echo base_url('Mitra') ?>">Mitra</a></li>
                                             <li class="<?php echo (isset($activetk))? $activetk:''; ?>"><a href="<?php echo base_url('TentangKami') ?>">Tentang Kami</a></li>
-                                           
                                             <li class="<?php echo (isset($activektk))? $activektk:''; ?>"><a href="<?php echo base_url('Contact') ?>">Kontak</a></li>
                                         </ul>
                                     </div>
@@ -143,3 +150,6 @@
         </script>
         <?php echo view($content,isset($datacontent)?$datacontent:array())?>
         <?php  echo view('customer/footer'); ?>
+
+    </body>
+    </html>
