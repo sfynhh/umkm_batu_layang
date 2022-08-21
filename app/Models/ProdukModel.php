@@ -27,6 +27,22 @@ class ProdukModel extends Model
         $sql="SELECT count(*) as jumlah from m_produk";
         return $this->db->query($sql)->getRowArray();
     }
+
+     public function getproduksearch($idkat, $namaproduk)
+    {
+         $query = $this->db->table('m_produk')->select('*')
+            ->join('m_mitra', 'm_produk.produk_id_mitra=m_mitra.id_mitra')
+            ->where('produk_id_kategori', $idkat)
+            ->like('nama_produk', $namaproduk)->get()->getResultArray();
+    return $query;
+    }
+    public function getprodukbyname($namaproduk)
+    {
+         $query = $this->db->table('m_produk')->select('*')
+            ->join('m_mitra', 'm_produk.produk_id_mitra=m_mitra.id_mitra')
+            ->like('nama_produk', $namaproduk)->get()->getResultArray();
+    return $query;
+    }
     //untuk mendapatkan data seluruh tabel pegawai
     public function getAll(){
         return $this->findAll();

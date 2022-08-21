@@ -38,7 +38,7 @@ $routes->get('TentangKami', 'Home::tentangkami');
 $routes->get('Contact', 'Home::contact');
 $routes->get('Detail_Mitra/(:any)', 'Mitra::detailmitra/$1');
 $routes->get('Mitra', 'Mitra::index');
-$routes->get('Produk', 'Produk::produk_all');
+$routes->get('ProdukList/(:any)', 'Produk::produk_all/$1');
 $routes->get('ProdukSearch/(:any)/(:any)', 'Produk::produksearch/$1/$2');
 $routes->get('Produkjson', 'Produk::produk_json');
 $routes->get('Produkdetail/(:any)', 'Produk::detail_produk/$1');

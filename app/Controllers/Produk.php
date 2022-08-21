@@ -13,9 +13,38 @@ class Produk extends BaseController
 		$this->PM = new ProdukModel();
 		$this->MM = new MitraModel();
     }
-    public function produk_all()
-	{	
+    public function index(){
+    	$data=[ 'content'=>'customer/produk/produk_all',
+				'titletab'=>'Produk',
+				'activeprod'=>'active',
+				'kategorisearch'=>$this->PM->getkategori(),
+				'mitra'=>$this->MM->getmitra(),
+				'datacontent'=>[
+								'kategori'=>$this->PM->getkategori(),
+								'mitra' =>$this->MM->getmitra(),
+								'viewmenu'=>'search',
+								'idkategori'=>$this->request->getPost('kategori'),
+								'namaproduk'=>$this->request->getPost('namaproduk')
+								]
+				
+				];
+	echo view('customer/headnav', $data);
 
+    }
+    public function produksearch_json(){
+    	$id=$this->request->getPost('id_kat');
+    	$nameproduk =$this->request->getPost('nama_produk');
+    	if ($id=='all'){
+			$dataproduk = $this->PM->getprodukbyname($nameproduk);
+    	}else{
+    		$dataproduk = $this->PM->getproduksearch($id, $nameproduk);
+    	}
+		
+		//$dataproduk = $this->PM->getprodukall();
+		echo json_encode($dataproduk);
+    }
+    public function produk_all($kategori)
+	{	
 		$data=[ 'content'=>'customer/produk/produk_all',
 				'titletab'=>'Produk',
 				'activeprod'=>'active',
@@ -24,11 +53,25 @@ class Produk extends BaseController
 				'datacontent'=>[
 								'kategori'=>$this->PM->getkategori(),
 								'mitra' =>$this->MM->getmitra(),
-								'produk'=>$this->PM->getprodukall(),
+								'idkategori'=>$kategori,
 								]
+				
 				];
-		//print_r($this->PM->getprodukall());
+		if(!isset($_POST['cari'])){
+			if($kategori=='all'){
+			$data['datacontent']['viewmenu']='default';
+
+			}
+			else{
+			$data['datacontent']['viewmenu']='kategori';
+
+			}
 		echo view('customer/headnav', $data);
+		}else{
+			// $idktgr=$this->request->getPost('kategori');
+			 echo 'hai';
+		}
+		
 	}
 	public function produk_json()
 	{

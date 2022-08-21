@@ -97,10 +97,13 @@ product/sidebar_shop_ad.jpg" alt=""></a>
 
             
             $(document).ready(function(){
-                load_produk();
+                var viewstatus =<?php echo json_encode($viewmenu) ?>;
+                load_produk(viewstatus);
             });
-            function load_produk() {
-                $.ajax({
+            function load_produk(viewstatus) {
+               
+                if(viewstatus=="default"){
+                    $.ajax({
                     type : 'GET',
                     url : "<?php echo site_url(); ?>/Produk/produk_json",
                     dataType : 'json',
@@ -144,6 +147,109 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                             alert(thrownError);
                           }
                 });
+              }else if(viewstatus=="kategori"){
+                     var idkat=<?php echo json_encode($idkategori) ?>;
+                    $.ajax({    
+                    url : "<?php echo site_url(); ?>/Produk/produkbykategori_json",
+                    type:'post',
+                    dataType : 'json',
+                    data:({
+                        id_kat : idkat
+                    }),
+                    success :  function(res){
+                        //console.log(id)
+                        var html='';
+                        $.each(res, function(key, value) {
+
+                             var newdate = new Date(value.created_date);
+                               var nowdate=new Date();
+                               newdate.setDate(newdate.getDate()+7);
+                               if(newdate<=nowdate){
+                                var span =''
+                               }else{
+                                var span ='<span class="batch">New</span>';
+                               }
+                             var image = "<?= base_url('assetcustomer/img') ?>/" + value.foto_depan;
+                             html += `<a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`">
+                                        <div class="col-xl-3 col-md-4 col-sm-6 subkonten">
+                                            <div class="sp-product-item">
+                                                <div class="sp-product-thumb">
+                                                `+span+`<img src="`+image+`" style="width: 192px;height: 143px;" alt="">
+                                                </div>
+                                                <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                    <div class="sp-cart-wrap">
+                                                    <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </a>`
+                        });            
+                          
+                        $('#kontenproduk').html(html);
+                        document.getElementById("pagination-wrap").innerHTML="";
+                        //document.getElementById("kontenproduk").innerHTML="";
+                        produk_pagination();
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                            // alert(xhr.status);
+                            alert(thrownError);
+                          }
+                });
+            
+              }else{
+                var idktgr=<?php echo json_encode($idkategori) ?>;
+                var namaproduk=<?php echo (isset($namaproduk))? json_encode($namaproduk):json_encode(" ") ?>;
+                $.ajax({    
+                    url : "<?php echo site_url(); ?>/Produk/produksearch_json",
+                    type:'post',
+                    dataType : 'json',
+                    data:({
+                        id_kat : idktgr,
+                        nama_produk :namaproduk,
+                    }),
+                    success :  function(res){
+                        //console.log(id)
+                        var html='';
+                        $.each(res, function(key, value) {
+
+                             var newdate = new Date(value.created_date);
+                               var nowdate=new Date();
+                               newdate.setDate(newdate.getDate()+7);
+                               if(newdate<=nowdate){
+                                var span =''
+                               }else{
+                                var span ='<span class="batch">New</span>';
+                               }
+                             var image = "<?= base_url('assetcustomer/img') ?>/" + value.foto_depan;
+                             html += `<a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`">
+                                        <div class="col-xl-3 col-md-4 col-sm-6 subkonten">
+                                            <div class="sp-product-item">
+                                                <div class="sp-product-thumb">
+                                                `+span+`<img src="`+image+`" style="width: 192px;height: 143px;" alt="">
+                                                </div>
+                                                <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                    <div class="sp-cart-wrap">
+                                                    <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </a>`
+                        });            
+                          
+                        $('#kontenproduk').html(html);
+                        document.getElementById("pagination-wrap").innerHTML="";
+                        //document.getElementById("kontenproduk").innerHTML="";
+                        produk_pagination();
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                            // alert(xhr.status);
+                            alert(thrownError);
+                          }
+                });
+              }
+                
             }
 
             function bykategori(id) {
@@ -156,7 +262,7 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                         id_kat : id 
                     }),
                     success :  function(res){
-                        console.log(id)
+                        //console.log(id)
                         var html='';
                         $.each(res, function(key, value) {
 
