@@ -36,11 +36,12 @@ $routes->get('/', 'Home::index');
 $routes->get('Home', 'Home::index');
 $routes->get('TentangKami', 'Home::tentangkami');
 $routes->get('Contact', 'Home::contact');
-$routes->get('Detail_Mitra', 'Mitra::detailmitra');
+$routes->get('Detail_Mitra/(:any)', 'Mitra::detailmitra/$1');
 $routes->get('Mitra', 'Mitra::index');
-$routes->get('Produk/(:any)/(:any)', 'Produk::produk_all/$1/$2');
+$routes->get('Produk', 'Produk::produk_all');
 $routes->get('ProdukSearch/(:any)/(:any)', 'Produk::produksearch/$1/$2');
 $routes->get('Produkjson', 'Produk::produk_json');
+$routes->get('Produkdetail/(:any)', 'Produk::detail_produk/$1');
 
 /*
  * --------------------------------------------------------------------

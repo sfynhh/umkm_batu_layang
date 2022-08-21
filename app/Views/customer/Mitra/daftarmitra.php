@@ -12,44 +12,20 @@
                 </div>
             </div>
             <div class="row justify-content-center">
+                <?php foreach($mitra as $val) {?>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
                     <div class="services-item">
-                        <a href="<?= base_url('Detail_Mitra')?>" class="services-link"></a>
+                        <a href="<?= base_url('Detail_Mitra/'.$val->id_pemilik_mitra)?>" class="services-link"></a>
                         <div class="post-avatar-img-circle">
                             <img src="<?php echo base_url('') ?>/assetcustomer/img/blog/post_avatar_img.png" alt="img">
                         </div>
                         <div class="content">
-                            <h5>Easy Returns<span class="new">NEW</span></h5>
-                            <p>Knowledge base that organized collection system</p>
+                            <h5><?php echo $val->nama_mitra ?></h5>
+                            <p>Pemilik : <?php echo $val->nama_pemilik ?></p>
                         </div>
                     </div>
                 </div>
-              
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                    <div class="services-item">
-                        <a href="<?= base_url('Detail_Mitra')?>" class="services-link"></a>
-                        <div class="post-avatar-img-circle">
-                            <img src="<?php echo base_url('') ?>/assetcustomer/img/blog/post_avatar_img.png" alt="img">
-                        </div>
-                        <div class="content">
-                            <h5>Daily Deals Discount</h5>
-                            <p>Knowledge base that organized collection system</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                    <div class="services-item">
-                        <a href="<?= base_url('Detail_Mitra')?>" class="services-link"></a>
-                        <div class="post-avatar-img-circle">
-                            <img src="<?php echo base_url('') ?>/assetcustomer/img/blog/post_avatar_img.png" alt="img">
-                        </div>
-                        <div class="content">
-                            <h5>Automation</h5>
-                            <p>Knowledge base that organized collection system</p>
-                        </div>
-                    </div>
-                </div>
-                
+                <?php } ?>
               
             </div>
         </div>

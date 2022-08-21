@@ -19,19 +19,32 @@ class Mitra extends BaseController
 				'activemitra'=>'active',
 				'kategorisearch'=>$this->PM->getkategori(),
 				'mitra'=>$this->MM->getmitra(),
-				'datacontent'=>[]
+				'datacontent'=>[
+								'mitra'=>$this->MM->getmitra()
+								]
 				];
 		echo view('customer/headnav', $data);
 	}
-    public function detailmitra()
+    public function detailmitra($id)
 	{	$data=[ 'content'=>'customer/Mitra/detail_mitra',
 				'titletab'=>'Detail Mitra',
 				'activemitra'=>'active',
 				'kategorisearch'=>$this->PM->getkategori(),
 				'mitra'=>$this->MM->getmitra(),
-				'datacontent'=>[]
+				'datacontent'=>[
+								'kategori'=>$this->PM->getkategori(),
+								'detailmitra'=>$this->MM->getmitrabyid($id),
+							 ]
 				];
 		echo view('customer/headnav', $data);
+	}
+
+	public function produkbymitra()
+	{
+		$id=$this->request->getPost('id_mitra');
+		$dataproduk = $this->PM->getprodukbymitra($id);
+		//$dataproduk = $this->PM->getprodukall();
+		echo json_encode($dataproduk);
 	}
 }
 

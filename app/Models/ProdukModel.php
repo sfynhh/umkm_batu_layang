@@ -22,6 +22,11 @@ class ProdukModel extends Model
          $query = $this->db->table('ms_kategori_produk')->get()->getResult();
         return $query;
     }
+    public function jumlahproduk()
+    {
+        $sql="SELECT count(*) as jumlah from m_produk";
+        return $this->db->query($sql)->getRowArray();
+    }
     //untuk mendapatkan data seluruh tabel pegawai
     public function getAll(){
         return $this->findAll();
@@ -30,6 +35,42 @@ class ProdukModel extends Model
 
     $query = $this->db->table('m_produk')->select('*')
             ->join('m_mitra', 'm_produk.produk_id_mitra=m_mitra.id_mitra')->get()->getResultArray();
+    return $query;
+
+    }
+    public function getprodukbykategori($id){
+
+    $query = $this->db->table('m_produk')->select('*')
+            ->join('m_mitra', 'm_produk.produk_id_mitra=m_mitra.id_mitra')
+            ->where('produk_id_kategori', $id)->get()->getResultArray();
+    return $query;
+
+    }
+    public function getprodukbykategorimitra($id, $id_mitra){
+
+    $query = $this->db->table('m_produk')->select('*')
+            ->join('m_mitra', 'm_produk.produk_id_mitra=m_mitra.id_mitra')
+            ->where('produk_id_kategori', $id)
+            ->where('produk_id_mitra', $id_mitra)->get()->getResultArray();
+    return $query;
+
+    }
+     
+    public function getprodukbymitra($id){
+
+    $query = $this->db->table('m_produk')->select('*')
+            ->join('m_mitra', 'm_produk.produk_id_mitra=m_mitra.id_mitra')
+            ->where('produk_id_mitra', $id)->get()->getResultArray();
+    return $query;
+
+    }
+
+    public function produkdetail($id){
+
+    $query = $this->db->table('m_produk')->select('*')
+            ->join('m_mitra', 'm_produk.produk_id_mitra=m_mitra.id_mitra')
+            ->join('ms_kategori_produk', 'm_produk.produk_id_kategori=ms_kategori_produk.id_kategori')
+            ->where('m_produk.id_produk', $id)->get()->getRowArray();
     return $query;
 
     }

@@ -101,7 +101,7 @@
                                         <a href="#" class="cat-toggle"><i class="fas fa-bars"></i>Lihat Toko<i class="fas fa-angle-down"></i></a>
                                         <ul class="category-menu">
                                             <?php foreach($mitra as $val){ ?>
-                                            <li><a href="shop.html"><!-- <i class="flaticon-cherry"> --></i><?php echo $val->nama_mitra ?></a></li>
+                                            <li><a href="<?php echo base_url('Detail_Mitra/'.$val->id_pemilik_mitra) ?>"><!-- <i class="flaticon-cherry"> --></i><?php echo $val->nama_mitra ?></a></li>
                                             
                                             <?php } ?>
                                         </ul>
@@ -110,7 +110,7 @@
                                         <ul class="navigation">
                                             <li class="<?php echo (isset($activehome))? $activehome:''; ?>"><a href="<?php echo base_url('Home') ?>">Home</a>
                                             </li>
-                                            <li class="<?php echo (isset($activeprod))? $activeprod:''; ?>"><a href="<?php echo base_url('Produk/all/all') ?>">Produk Kami</a></li>
+                                            <li class="<?php echo (isset($activeprod))? $activeprod:''; ?>"><a href="<?php echo base_url('Produk') ?>">Produk Kami</a></li>
                                             <li class="<?php echo (isset($activemitra))? $activemitra:''; ?>"><a href="<?php echo base_url('Mitra') ?>">Mitra</a></li>
                                             <li class="<?php echo (isset($activetk))? $activetk:''; ?>"><a href="<?php echo base_url('TentangKami') ?>">Tentang Kami</a></li>
                                             <li class="<?php echo (isset($activektk))? $activektk:''; ?>"><a href="<?php echo base_url('Contact') ?>">Kontak</a></li>

@@ -16,7 +16,19 @@ class MitraModel extends Model
 
     //untuk memasukkan data pegawai
     public function getmitra(){
-         $query = $this->db->table($this->table)->get()->getResult();
+         $query = $this->db->table($this->table)
+                    ->join('m_pemilik_mitra', 'm_mitra.id_pemilik=m_pemilik_mitra.id_pemilik_mitra')->get()->getResult();
+        return $query;
+    }
+    public function jumlahmitra()
+    {
+        $sql="SELECT count(*) as jumlah from m_mitra";
+        return $this->db->query($sql)->getRowArray();
+    }
+    public function getmitrabyid($id){
+         $query = $this->db->table($this->table)
+                    ->join('m_pemilik_mitra', 'm_mitra.id_pemilik=m_pemilik_mitra.id_pemilik_mitra')
+                    ->where('id_pemilik_mitra', $id)->get()->getRowArray();
         return $query;
     }
     //untuk mendapatkan data seluruh tabel pegawai

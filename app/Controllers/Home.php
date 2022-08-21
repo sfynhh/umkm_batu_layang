@@ -43,7 +43,10 @@ class Home extends BaseController
 				'activetk'=>'active',
 				'mitra'=>$this->MM->getmitra(),
 				'kategorisearch'=>$this->PM->getkategori(),
-				'datacontent'=>[]
+				'datacontent'=>[
+								'jumlahproduk'=>$this->PM->jumlahproduk(),
+								'jumlahmitra'=>$this->MM->jumlahmitra(),
+								]
 				];
 		echo view('customer/headnav', $data);
 	}

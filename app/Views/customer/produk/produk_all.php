@@ -14,7 +14,7 @@
                                     <div class="shop-cat-list">
                                         <ul>
                                             <?php foreach ($kategori as $val){ ?>
-                                            <li><a href="shop.html"><?php echo $val->nama_kategori ?><span><i class="fa-solid fa-magnifying-glass-arrow-right"></i></span></a></li>
+                                            <li><a href="#" onclick="bykategori(<?php echo $val->id_kategori ?>)"><?php echo $val->nama_kategori ?><span><i class="fa-solid fa-magnifying-glass-arrow-right"></i></span></a></li>
                                                                                     
                                             <?php } ?>
                                             </ul>
@@ -28,7 +28,7 @@
                                     <div class="shop-cat-list">
                                         <ul>
                                             <?php foreach ($mitra as $val): ?>
-                                               <li><a href="shop.html"><?php echo $val->nama_mitra ?> <span><i class="fa-solid fa-magnifying-glass-arrow-right"></i></span></a></li> 
+                                               <li><a href="#" onclick="bymitra(<?php echo $val->id_mitra ?>)"><?php echo $val->nama_mitra ?> <span><i class="fa-solid fa-magnifying-glass-arrow-right"></i></span></a></li> 
                                             <?php endforeach ?>
                                             
                                         </ul>
@@ -82,17 +82,8 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                                        
                                 </div>
                             </div>
-                            <div class="pagination-wrap">
-                                <!-- <ul>
-                                    <li class="prev"><a href="shop.html">Prev</a></li>
-                                    <li><a href="shop.html">1</a></li>
-                                    <li class="active"><a href="shop.html">2</a></li>
-                                    <li><a href="shop.html">3</a></li>
-                                    <li><a href="shop.html">4</a></li>
-                                    <li><a href="shop.html">...</a></li>
-                                    <li><a href="shop.html">10</a></li>
-                                    <li class="next"><a href="shop.html">Next</a></li>
-                                </ul> -->
+                            <div class="pagination-wrap" id="pagination-wrap">
+                               
                             </div>
                         </div>
                     </div>
@@ -114,16 +105,29 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                     url : "<?php echo site_url(); ?>/Produk/produk_json",
                     dataType : 'json',
                     success :  function(res){
+
                         var html='';
                         $.each(res, function(key, value) {
+                               var newdate = new Date(value.created_date);
+                               var nowdate=new Date();
+                               newdate.setDate(newdate.getDate()+7);
+                               if(newdate<=nowdate){
+                                var span =''
+                               }else{
+                                var span ='<span class="batch">New</span>';
+                               }
+                             
                              var image = "<?= base_url('assetcustomer/img') ?>/" + value.foto_depan;
-                             html += `<a href="shop-details.html">
+                             html += `<a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`">
                                         <div class="col-xl-3 col-md-4 col-sm-6 subkonten">
                                             <div class="sp-product-item">
                                                 <div class="sp-product-thumb">
-                                                <span class="batch">New</span><img src="`+image+`" style="width: 192px;height: 143px;" alt="">
+                                               `+span+`<img src="`+image+`" style="width: 192px;height: 143px;" alt="">
                                                 </div>
                                                 <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                    <div class="sp-cart-wrap">
+                                                    <a href="https://wa.me/+6281461216787" class="btn btn-primary">Order Now</a>
+                                                    </div>
                                                 </div>
                                               </div>
                                             </div>
@@ -132,7 +136,121 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                           
                         $('#kontenproduk').html(html);
 
-                         $(function () {
+                        produk_pagination();
+                        
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                            // alert(xhr.status);
+                            alert(thrownError);
+                          }
+                });
+            }
+
+            function bykategori(id) {
+                          
+                $.ajax({    
+                    url : "<?php echo site_url(); ?>/Produk/produkbykategori_json",
+                    type:'post',
+                    dataType : 'json',
+                    data:({
+                        id_kat : id 
+                    }),
+                    success :  function(res){
+                        console.log(id)
+                        var html='';
+                        $.each(res, function(key, value) {
+
+                             var newdate = new Date(value.created_date);
+                               var nowdate=new Date();
+                               newdate.setDate(newdate.getDate()+7);
+                               if(newdate<=nowdate){
+                                var span =''
+                               }else{
+                                var span ='<span class="batch">New</span>';
+                               }
+                             var image = "<?= base_url('assetcustomer/img') ?>/" + value.foto_depan;
+                             html += `<a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`">
+                                        <div class="col-xl-3 col-md-4 col-sm-6 subkonten">
+                                            <div class="sp-product-item">
+                                                <div class="sp-product-thumb">
+                                                `+span+`<img src="`+image+`" style="width: 192px;height: 143px;" alt="">
+                                                </div>
+                                                <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                    <div class="sp-cart-wrap">
+                                                    <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </a>`
+                        });            
+                          
+                        $('#kontenproduk').html(html);
+                        document.getElementById("pagination-wrap").innerHTML="";
+                        //document.getElementById("kontenproduk").innerHTML="";
+                        produk_pagination();
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                            // alert(xhr.status);
+                            alert(thrownError);
+                          }
+                });
+            
+            }
+
+             function bymitra(id) {
+                          
+                $.ajax({    
+                    url : "<?php echo site_url(); ?>/Produk/produkbymitra_json",
+                    type:'post',
+                    dataType : 'json',
+                    data:({
+                        id_mitra : id 
+                    }),
+                    success :  function(res){
+                        console.log(id)
+                        var html='';
+                        $.each(res, function(key, value) {
+                             var newdate = new Date(value.created_date);
+                               var nowdate=new Date();
+                               newdate.setDate(newdate.getDate()+7);
+                               if(newdate<=nowdate){
+                                var span =''
+                               }else{
+                                var span ='<span class="batch">New</span>';
+                               }
+                             var image = "<?= base_url('assetcustomer/img') ?>/" + value.foto_depan;
+                             html += `<a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`">
+                                        <div class="col-xl-3 col-md-4 col-sm-6 subkonten">
+                                            <div class="sp-product-item">
+                                                <div class="sp-product-thumb">
+                                                `+span+`<img src="`+image+`" style="width: 192px;height: 143px;" alt="">
+                                                </div>
+                                                <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                    <div class="sp-cart-wrap">
+                                                    <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </a>`
+                        });            
+                          
+                        $('#kontenproduk').html(html);
+                        document.getElementById("pagination-wrap").innerHTML="";
+                        //document.getElementById("kontenproduk").innerHTML="";
+                        produk_pagination();
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                            // alert(xhr.status);
+                            alert(thrownError);
+                          }
+                });
+            
+            }
+
+            function produk_pagination() {
+                $(function () {
                             var numberOfitem=$('.kontenproduk .subkonten ').length;
                             var limitPerpage=8;
                             var totalPages=Math.ceil(numberOfitem/limitPerpage);
@@ -161,7 +279,7 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                                 $(".next").toggleClass("disable", currentPage === totalPages);
                                 return true;
                             }
-                           console.log(numberOfitem); 
+                           //console.log(numberOfitem); 
 
                             $(".pagination-wrap").append(
                                  $("<ul>").append(
@@ -183,13 +301,6 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                                 return showPage(currentPage - 1);
                               });      
                         });
-                        
-                    },
-                    error: function (xhr, ajaxOptions, thrownError) {
-                            // alert(xhr.status);
-                            alert(thrownError);
-                          }
-                });
             }
 
              function getPageList(totalPages, page, maxLength){

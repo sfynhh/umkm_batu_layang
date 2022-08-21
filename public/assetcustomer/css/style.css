@@ -451,6 +451,14 @@ label {
     height: 24px;
     background: #dbdada;
 }
+.activepage{
+	background-color: #4EB82E;
+	border-radius: 100%;
+}
+.activepage-filter{
+	background-color: #4EB82E;
+	border-radius: 100%;
+}
 .header-search-wrap form .custom-select {
 	display: inline-block;
 	padding: 10px 42px 10px 25px;
@@ -1314,7 +1322,7 @@ label {
 5. Breadcrumb
 ========================================================================*/
 .breadcrumb-bg {
-    background-image: url(../img/bg/breadcrumb_bg.jpg);
+    background-image: url(../img/bg/tentangkami.jpg);
     background-position: center;
     background-size: cover;
     padding: 125px 0 125px;
