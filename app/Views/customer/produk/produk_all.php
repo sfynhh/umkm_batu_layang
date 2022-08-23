@@ -48,7 +48,7 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                                     <span>healthy food</span>
                                     <h4 class="title"><a href="shop.html">Traditional Food</a></h4>
                                     <p>Super Offer is coming soon</p>
-                                    <a href="shop.html" class="btn rounded-btn">shop now</a>
+                                  
                                 </div>
                             </div>
                             <div class="shop-top-meta mb-30">
@@ -65,11 +65,8 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                                         <div class="shop-top-right">
                                             <form action="#">
                                                 <select name="select">
-                                                    <option value="">Sort by newness</option>
-                                                    <option>Free Shipping</option>
-                                                    <option>Best Match</option>
                                                     <option>Newest Item</option>
-                                                    <option>Size A - Z</option>
+                                            
                                                 </select>
                                             </form>
                                         </div>
@@ -127,7 +124,7 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                                                 <div class="sp-product-thumb">
                                                `+span+`<img src="`+image+`" style="width: 192px;height: 143px;" alt="">
                                                 </div>
-                                                <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                <div class="sp-product-content"><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`l"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
                                                     <a href="https://wa.me/+6281461216787" class="btn btn-primary">Order Now</a>
                                                     </div>
@@ -176,7 +173,7 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                                                 <div class="sp-product-thumb">
                                                 `+span+`<img src="`+image+`" style="width: 192px;height: 143px;" alt="">
                                                 </div>
-                                                <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                <div class="sp-product-content"><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
                                                     <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
                                                     </div>
@@ -228,7 +225,7 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                                                 <div class="sp-product-thumb">
                                                 `+span+`<img src="`+image+`" style="width: 192px;height: 143px;" alt="">
                                                 </div>
-                                                <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                <div class="sp-product-content"><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
                                                     <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
                                                     </div>
@@ -281,7 +278,7 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                                                 <div class="sp-product-thumb">
                                                 `+span+`<img src="`+image+`" style="width: 192px;height: 143px;" alt="">
                                                 </div>
-                                                <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                <div class="sp-product-content"><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
                                                     <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
                                                     </div>
@@ -332,7 +329,7 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                                                 <div class="sp-product-thumb">
                                                 `+span+`<img src="`+image+`" style="width: 192px;height: 143px;" alt="">
                                                 </div>
-                                                <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                <div class="sp-product-content"><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
                                                     <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
                                                     </div>

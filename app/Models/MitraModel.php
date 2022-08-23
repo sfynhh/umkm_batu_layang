@@ -36,6 +36,12 @@ class MitraModel extends Model
         return $this->findAll();
     }
 
+    public function createPesan($data)
+    {
+        $query = $this->db->table('pesan')->insert($data);
+        return $query;
+    }
+
     // //untuk mendapatkan data kos sesuai dengan ID untuk diedit
     // public function editData($id){
     //     $dbResult = $this->db->query("SELECT * FROM menu WHERE id_menu = ?", array($id)); 

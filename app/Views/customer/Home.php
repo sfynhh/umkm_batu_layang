@@ -11,7 +11,7 @@
                                         <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">top deal is cooming soon!</h5>
                                         <h2 class="title" data-animation="fadeInUp" data-delay=".4s">Traditional food</h2>
                                         <p data-animation="fadeInUp" data-delay=".6s">Promos are coming soon</p>
-                                        <a href="shop.html" class="btn rounded-btn" data-animation="fadeInUp" data-delay=".8s">Shop Now</a>
+                                        <a href="<?php echo base_url('ProdukList/all') ?>" class="btn rounded-btn" data-animation="fadeInUp" data-delay=".8s">Shop Now</a>
                                     </div>
                                 </div>
                                 <div class="single-slider slider-bg" data-background="<?php echo base_url('') ?>/assetcustomer/img/slider/slider_bg1.jpg">
@@ -19,7 +19,7 @@
                                          <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">top deal is cooming soon!</h5>
                                         <h2 class="title" data-animation="fadeInUp" data-delay=".4s">Traditional food</h2>
                                         <p data-animation="fadeInUp" data-delay=".6s">Promos are coming soon</p>
-                                        <a href="shop.html" class="btn rounded-btn" data-animation="fadeInUp" data-delay=".8s">Shop Now</a>
+                                        <a href="<?php echo base_url('ProdukList/all') ?>" class="btn rounded-btn" data-animation="fadeInUp" data-delay=".8s">Shop Now</a>
                                     </div>
                                 </div>
                                 <div class="single-slider slider-bg" data-background="<?php echo base_url('') ?>/assetcustomer/img/slider/slider_bg3.jpg">
@@ -27,7 +27,7 @@
                                          <h5 class="sub-title" data-animation="fadeInUp" data-delay=".2s">top deal is cooming soon!</h5>
                                         <h2 class="title" data-animation="fadeInUp" data-delay=".4s">Traditional food</h2>
                                         <p data-animation="fadeInUp" data-delay=".6s">Promos are coming soon</p>
-                                        <a href="shop.html" class="btn rounded-btn" data-animation="fadeInUp" data-delay=".8s">Shop Now</a>
+                                        <a href="<?php echo base_url('ProdukList/all') ?>" class="btn rounded-btn" data-animation="fadeInUp" data-delay=".8s">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
             <!-- slider-area-end -->
          
             <!-- discount-area -->
-            <section class="discount-area pt-80">
+         <!--    <section class="discount-area pt-80">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-xl-4 col-lg-6 col-md-8">
@@ -77,7 +77,7 @@ product/discount_img01.jpg" alt="">
                                 <div class="discount-content">
                                     <span>healthy food</span>
                                     <h4 class="title"><a href="shop.html">100 organic UP TO 35%</a></h4>
-                                    <a href="shop.html" class="btn">shop now</a>
+                                    <a href="<?php echo base_url('ProdukList/all') ?>" class="btn">shop now</a>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@ product/discount_img02.jpg" alt="">
                                 <div class="discount-content">
                                     <span>healthy food</span>
                                     <h4 class="title"><a href="shop.html">Hygienically Packed</a></h4>
-                                    <a href="shop.html" class="btn">shop now</a>
+                                    <a href="<?php echo base_url('ProdukList/all') ?>" class="btn">shop now</a>
                                 </div>
                             </div>
                         </div>
@@ -103,13 +103,13 @@ product/discount_img03.jpg" alt="">
                                 <div class="discount-content">
                                     <span>healthy food</span>
                                     <h4 class="title"><a href="shop.html">baby favorite UP TO 15%</a></h4>
-                                    <a href="shop.html" class="btn">shop now</a>
+                                    <a href="<?php echo base_url('ProdukList/all') ?>" class="btn">shop now</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- discount-area-end -->
 
             <!-- special-products-area -->
@@ -158,15 +158,9 @@ images/coupon_code.png" alt="">
             </div>
             <!-- coupon-area-end -->
 
-            <!-- best-sellers-area -->
-            <section class="best-sellers-area pt-75">
-              
-
-            </section>
-            <!-- best-sellers-area-end -->
 
             <!-- discount-area -->
-            <section class="discount-style-two pt-60 pb-50">
+          <!--   <section class="discount-style-two pt-60 pb-50">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
@@ -179,7 +173,7 @@ product/s_discount_img01.jpg" alt="">
                                     <span>healthy food</span>
                                     <h4 class="title"><a href="shop.html">organic farm for ganic</a></h4>
                                     <p>Super Offer TO 50% OFF</p>
-                                    <a href="shop.html" class="btn rounded-btn">shop now</a>
+                                    <a href="<?php echo base_url('ProdukList/all') ?>" class="btn rounded-btn">shop now</a>
                                 </div>
                             </div>
                         </div>
@@ -193,13 +187,13 @@ product/s_discount_img02.jpg" alt="">
                                     <span>healthy food</span>
                                     <h4 class="title"><a href="shop.html">BABY FAVORITE UP TO 15%</a></h4>
                                     <p>Super Offer TO 50% OFF</p>
-                                    <a href="shop.html" class="btn rounded-btn">shop now</a>
+                                    <a href="<?php echo base_url('ProdukList/all') ?>" class="btn rounded-btn">shop now</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- discount-area-end -->
 
         </main>
@@ -223,7 +217,7 @@ product/s_discount_img02.jpg" alt="">
                                                 <div class="sp-product-thumb" >
                                                 <span class="batch">New</span><img src="`+image+`" style="width: 192px;height: 143px;" alt="">
                                                 </div>
-                                                <div class="sp-product-content" ><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                <div class="sp-product-content" ><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
                                                     <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
                                                     </div>

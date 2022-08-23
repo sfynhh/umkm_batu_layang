@@ -17,7 +17,7 @@
                     <div class="services-item">
                         <a href="<?= base_url('Detail_Mitra/'.$val->id_pemilik_mitra)?>" class="services-link"></a>
                         <div class="post-avatar-img-circle">
-                            <img src="<?php echo base_url('') ?>/assetcustomer/img/blog/post_avatar_img.png" alt="img">
+                            <img src="<?php echo base_url('') ?>/assetcustomer/img/blog/storelogo.jpg" alt="img">
                         </div>
                         <div class="content">
                             <h5><?php echo $val->nama_mitra ?></h5>

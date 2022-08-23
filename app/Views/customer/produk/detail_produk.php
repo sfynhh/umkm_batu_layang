@@ -10,7 +10,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                      
-                                        <li class="breadcrumb-item"><a href="shop.html">Produk Kami</a></li>
+                                        <li class="breadcrumb-item"><a href="#" onclick="history.back(-1)" >Produk Kami</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Produk Detail</li>
                                     </ol>
                                 </nav>
@@ -155,7 +155,7 @@
                                                 <div class="sp-product-thumb">
                                                 <span class="batch">New</span><img src="`+image+`" style="width: 192px;height: 143px;" alt="">
                                                 </div>
-                                                <div class="sp-product-content"><h6 class="title"><a href="shop-details.html"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
+                                                <div class="sp-product-content"><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
                                                     <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
                                                     </div>

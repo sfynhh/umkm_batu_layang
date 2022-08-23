@@ -9,7 +9,7 @@
                                 
                                 <div class="avatar-post mt-50 mb-50" style="width: 100%;">
                                     <div class="post-avatar-img">
-                                        <img src="<?php echo base_url('') ?>/assetcustomer/img/blog/post_avatar_img.png" alt="img">
+                                        <img src="<?php echo base_url('') ?>/assetcustomer/img/blog/storelogo.jpg" alt="img">
                                     </div>
                                     <div class="post-avatar-content">
                                         <h5><?php echo $detailmitra['nama_mitra'] ?></h5>

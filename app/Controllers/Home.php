@@ -13,6 +13,7 @@ class Home extends BaseController
     {
 		//session_start();
         //load kelas AkunModel
+         $this->validation =  \Config\Services::validation();
         $this->PM = new ProdukModel();
         $this->MM = new MitraModel();
        
@@ -59,6 +60,48 @@ class Home extends BaseController
 				'datacontent'=>[]
 				];
 		echo view('customer/headnav', $data);
+	}
+
+
+	public function addjson(){
+		$this->validation->setRules([
+            'nama' => [
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Nama Tunjangan Belum diisi'
+                ]
+            ],
+            'email'=>[
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'email Belum diisi'
+                ]
+             ]
+
+
+         ]);
+
+         $isDataValid = $this->validation->withRequest($this->request)->run();
+         if($isDataValid){
+            $data = array(
+            'nama_pengirim' => $this->request->getPost('nama'),
+            'email_pengirim' => $this->request->getPost('email'),
+            'pesan' => $this->request->getPost('message'),
+
+            
+            );
+            $this->MM->createPesan($data);
+           
+            //echo 'hai';
+            echo json_encode(array('status' => 'ok;', 'text' => ''));
+            
+         }else{
+              $validation = $this->validation;
+              $error=$validation->getErrors();
+          	  $dataname=$_POST;
+              //print_r($error);
+              echo json_encode(array('status' => 'error;', 'text' => '', 'data'=>$error,'dataname'=>$dataname));        
+               }
 	}
 	
 
