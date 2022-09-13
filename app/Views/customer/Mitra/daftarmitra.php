@@ -6,7 +6,7 @@
                 <div class="col-xl-7 col-lg-9">
                     <div class="services-section-title text-center mb-55">
                         <h2 class="title">Mitra Kami</h2>
-                        <button type="button" class="btn rounded-btn">Daftar Mitra</button>
+                        <a type="button" href="<?php echo base_url('register') ?>" class="btn rounded-btn">Daftar Mitra</a>
                     </div>
                    
                 </div>

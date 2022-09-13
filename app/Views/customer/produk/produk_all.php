@@ -1,7 +1,5 @@
  <main>
-            <!-- breadcrumb-area-end -->
-
-            <!-- shop-area -->
+   <!-- shop-area -->
             <section class="shop--area pt-90 pb-90">
                 <div class="container">
                     <div class="row justify-content-center">

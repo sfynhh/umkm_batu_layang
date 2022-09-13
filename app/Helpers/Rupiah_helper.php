@@ -23,5 +23,13 @@
             return terbilang($x / 1000) . " Ribu" . terbilang($x % 1000);   
         elseif ($x < 1000000000)   
             return terbilang($x / 1000000) . " Juta" . terbilang($x % 1000000);    
-    }   
+    }
+    function singkatan($var){
+        $explodevar = explode(" ", $var);
+        $arraypush=array();
+        for ($i=0; $i <count($explodevar) ; $i++) { 
+          array_push($arraypush, substr($explodevar[$i], 0,1));
+        }
+        return strtoupper(implode("", $arraypush));
+    }
 ?>

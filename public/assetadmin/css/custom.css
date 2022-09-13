@@ -1,0 +1,25 @@
+.form-custom{
+	height: 40px;
+	border-radius: 20px;
+	border-color: #cfcfcf;
+}
+.input-group-custom{
+	border-radius: 0px 20px 20px 0px;
+	height: 40px;
+}
+.rupiah{
+	border-radius:  20px 0px 0px  20px;
+
+}
+
+.custom_logo{
+    width: 155px; 
+    height: auto;
+    transition: all ease-in .3s;
+  }
+
+.small{
+  width: 70px; 
+  transition: all ease-out .3s;
+}
+

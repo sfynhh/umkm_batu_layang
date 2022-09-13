@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class ProdukModel extends Model
 {
-    protected $table = 'Produk';
+    protected $table = 'm_produk';
 
     public function idmenu(){
         $sql ="SELECT CONCAT('M', LPAD(IFNULL(max(SUBSTRING(id_menu, 2, 3)),'0')+1,3, '0')) AS id_baru from menu";
@@ -16,7 +16,28 @@ class ProdukModel extends Model
     public function getTabelmodel(){
        
     }
+    public function addproduct($data)
+    {
+        $query = $this->db->table($this->table)->insert($data);
+        return $query;
+    }
 
+     public function updateproduct($data, $id)
+    {
+         $query = $this->db->table('m_produk')->update($data, array('id_produk' => $id));
+        return $query;
+    }
+
+    public function maxid()
+    {
+        $builder = $this->db->table($this->table);
+        $builder->selectMax('id_produk', 'hsl');
+        $query = $builder->get()->getRowArray();
+
+        $id=$query['hsl']+1;
+       
+        return $id;
+    }
     //untuk memasukkan data pegawai
     public function getkategori(){
          $query = $this->db->table('ms_kategori_produk')->get()->getResult();
@@ -89,6 +110,11 @@ class ProdukModel extends Model
             ->where('m_produk.id_produk', $id)->get()->getRowArray();
     return $query;
 
+    }
+    public function deleteProduk($id)
+    {
+        $query = $this->db->table($this->table)->delete(array('id_produk' => $id));
+        return $query;
     }
 
     // //untuk mendapatkan data kos sesuai dengan ID untuk diedit

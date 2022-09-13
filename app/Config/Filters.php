@@ -19,6 +19,8 @@ class Filters extends BaseConfig
 		'csrf'     => CSRF::class,
 		'toolbar'  => DebugToolbar::class,
 		'honeypot' => Honeypot::class,
+		'login'      => \Myth\Auth\Filters\LoginFilter::class,
+    	'role'       => \Myth\Auth\Filters\RoleFilter::class,
 	];
 
 	/**
@@ -31,6 +33,7 @@ class Filters extends BaseConfig
 		'before' => [
 			// 'honeypot',
 			// 'csrf',
+			//'login', 
 		],
 		'after'  => [
 			'toolbar',
@@ -47,8 +50,9 @@ class Filters extends BaseConfig
 	 *
 	 * @var array
 	 */
-	public $methods = [];
-
+	public $methods = [
+			//'get' => ['login']
+		];
 	/**
 	 * List of filter aliases that should run on any
 	 * before or after URI patterns.
@@ -58,5 +62,7 @@ class Filters extends BaseConfig
 	 *
 	 * @var array
 	 */
-	public $filters = [];
+	public $filters = [
+				 'login' => ['before' => ['Seller', 'MyProduct','TambahProduk', 'UpdateProduk/*', 'MyProduct/tambah','MyProduct/updateProduk/*' ]]
+				];
 }

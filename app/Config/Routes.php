@@ -43,6 +43,9 @@ $routes->get('ProdukSearch/(:any)/(:any)', 'Produk::produksearch/$1/$2');
 $routes->get('Produkjson', 'Produk::produk_json');
 $routes->get('Produkdetail/(:any)', 'Produk::detail_produk/$1');
 
+$routes->get('TambahProduk', 'MyProduct::tambah');
+$routes->get('UpdateProduk/(:any)', 'MyProduct::updateProduk/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
