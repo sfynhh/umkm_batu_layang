@@ -176,9 +176,10 @@ class CodeIgniter
         if (! is_file(COMPOSER_PATH)) {
             $this->resolvePlatformExtensions(); // @codeCoverageIgnore
         }
-
+        if(function_exists('Locale::setDefault')){
         // Set default locale on the server
         Locale::setDefault($this->config->defaultLocale ?? 'en');
+        }
 
         // Set default timezone on the server
         date_default_timezone_set($this->config->appTimezone ?? 'UTC');
