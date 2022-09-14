@@ -243,8 +243,8 @@ class MyProduct extends BaseController
                  $namafoto=$filefoto->getName();
              }
 
-             $idmax=$this->ProM->maxid();
-             $qrCode = QrCode::create(base_url('ProdukDetail/'.$idmax))
+            
+             $qrCode = QrCode::create(base_url('ProdukDetail/'.$id_produk))
              ->setEncoding(new Encoding('UTF-8'))
              ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
              ->setSize(300)
