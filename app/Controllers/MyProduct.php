@@ -115,7 +115,7 @@ class MyProduct extends BaseController
          }
          if($isDataValid){
             $idmax=$this->ProM->maxid();
-           $qrCode = QrCode::create(base_url('ProdukDetail/'.$idmax))
+           $qrCode = QrCode::create(base_url('Produkdetail/'.$idmax))
            ->setEncoding(new Encoding('UTF-8'))
            ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
            ->setSize(300)
@@ -244,7 +244,7 @@ class MyProduct extends BaseController
              }
 
             
-             $qrCode = QrCode::create(base_url('ProdukDetail/'.$id_produk))
+             $qrCode = QrCode::create(base_url('Produkdetail/'.$id_produk))
              ->setEncoding(new Encoding('UTF-8'))
              ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
              ->setSize(300)
