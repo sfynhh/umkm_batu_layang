@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-use App\Models\PemilikMOdel;
+use App\Models\PemilikModel;
 use Myth\Auth\Password;
 class Seller extends BaseController
 { 
@@ -18,7 +18,7 @@ class Seller extends BaseController
 
     public function index()
 	{  
-        
+
     $data =[
             'titletab'=>'UMKM Batu Layang | Dashboard',
             'contenttit'=>'Dashboard',
