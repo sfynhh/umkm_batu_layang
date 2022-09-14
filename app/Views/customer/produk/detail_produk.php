@@ -58,7 +58,7 @@
                                     </ul>
                                 </div>
                                 <div class="shop-details-price">
-                                    <h2 class="price"><?php echo Rupiah($produkdetail['harga_produk']) ?></h2>
+                                    <h2 class="price"><?php echo rupiah($produkdetail['harga_produk']) ?></h2>
                                    <!--  <h5 class="stock-status">- IN Stock</h5> -->
                                 </div>
                                 <p><?php echo $produkdetail['deskripsi_produk'] ?></p>

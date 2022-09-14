@@ -38,7 +38,7 @@
                             <td><?php echo $val['nama_produk'] ?></td>
                             <td><?php echo $val['deskripsi_produk'] ?></td>
                             <td><?php echo $val['stok_produk'] ?></td>
-                            <td><?php echo Rupiah($val['harga_produk']) ?></td>
+                            <td><?php echo rupiah($val['harga_produk']) ?></td>
                             <td><?php echo date('m-d-Y', strtotime($val['tgl_produksi']))?></td>
                              <td><?php echo date('m-d-Y', strtotime($val['tgl_expired']))?></td>
                              <td><img src="/assetcustomer/img/<?php echo $val['foto_depan'] ?>" style="height: 100px; width: auto;"></td>
