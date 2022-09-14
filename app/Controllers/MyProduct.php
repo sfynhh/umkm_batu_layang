@@ -263,7 +263,7 @@ class MyProduct extends BaseController
              ->setTextColor(new Color(54, 230, 48));
 
              $result = $this->writer->write($qrCode, $logo, $label);
-             $namaQr= $this->request->getPost('nama_produk').$_SESSION['id_mitra'].'_'. $idmax.'.png';
+             $namaQr= $this->request->getPost('nama_produk').$_SESSION['id_mitra'].'_'.$id_produk.'.png';
 
              $result->saveToFile( FCPATH .$dir.'/'.$namaQr);
              if($isDataValid){
