@@ -7,7 +7,7 @@ use CodeIgniter\Session\Session;
 use Myth\Auth\Config\Auth as AuthConfig;
 use Myth\Auth\Entities\User;
 use Myth\Auth\Models\UserModel;
-use App\Models\PemilikMOdel;
+use App\Models\PemilikModel;
 
 class AuthController extends Controller
 {
