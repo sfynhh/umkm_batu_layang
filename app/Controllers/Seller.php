@@ -12,15 +12,13 @@ class Seller extends BaseController
         // session_start();
        
           $this->session =  \Config\Services::session();
-          $this->PM =new PemilikMOdel();
+          $this->PM =new PemilikModel();
          
     }
 
     public function index()
 	{  
-       $datasesion=$this->PM->getPemilikByid(user()->id);
-       $this->session->set($datasesion);
-
+        
     $data =[
             'titletab'=>'UMKM Batu Layang | Dashboard',
             'contenttit'=>'Dashboard',

@@ -33,6 +33,7 @@
 	
 	<!-- Style css -->
     <link href="<?php echo base_url('') ?>/assetadmin/css/style.css" rel="stylesheet">
+     <link href="<?php echo base_url('') ?>/assetadmin/css/print.min.css" rel="stylesheet">
     <link href="<?php echo base_url('') ?>/assetadmin/css/custom.css" rel="stylesheet">
 
      <link href="<?php echo base_url('') ?>/assetadmin/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
@@ -157,7 +158,7 @@
 						</a>
                     </li>
 
-                    <li><a href="<?php echo base_url('MyProduct') ?>">
+                    <li <?php echo (isset($active))? $active :'' ?>><a href="<?php echo base_url('MyProduct') ?>">
                             <i class="fa-solid fa-boxes-stacked"></i>
                             <span class="nav-text">Produk Saya</span>
                         </a>

@@ -31,6 +31,7 @@ class MyProduct extends BaseController
     $data =[
             'titletab'=>'UMKM BATU LAYANG | Produk Saya',
             'contenttit'=>'Produk Saya',
+            'active'=>'active',
             'content'=>'admin/MyProduct/index',
             'datacontent'=>[
                             'Getproduk'=>$this->ProM->getprodukbymitra($_SESSION['id_mitra']),
@@ -133,7 +134,7 @@ class MyProduct extends BaseController
            ->setTextColor(new Color(54, 230, 48));
 
            $result = $this->writer->write($qrCode, $logo, $label);
-           $namaQr= $this->request->getPost('nama_produk').$_SESSION['id_mitra'].'.png';
+           $namaQr= $this->request->getPost('nama_produk').$_SESSION['id_mitra'].'_'. $idmax.'.png';
 
            $result->saveToFile( FCPATH .$dir.'/'.$namaQr);
 
@@ -241,6 +242,30 @@ class MyProduct extends BaseController
                  $filefoto->move('assetcustomer/img/product');
                  $namafoto=$filefoto->getName();
              }
+
+             $idmax=$this->ProM->maxid();
+             $qrCode = QrCode::create(base_url('ProdukDetail/'.$idmax))
+             ->setEncoding(new Encoding('UTF-8'))
+             ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
+             ->setSize(300)
+             ->setMargin(10)
+             ->setRoundBlockSizeMode(new RoundBlockSizeModeMargin())
+             ->setForegroundColor(new Color(0, 0, 0))
+             ->setBackgroundColor(new Color(255, 255, 255));
+
+             $dir ="assetcustomer/img/Qrcode";
+            // Create generic logo
+             $logo = Logo::create( FCPATH .'/assetcustomer/img/logo/umkmlogo.png')
+             ->setResizeToWidth(150);
+
+            // Create generic label
+             $label = Label::create('umkmbatulayang.com')
+             ->setTextColor(new Color(54, 230, 48));
+
+             $result = $this->writer->write($qrCode, $logo, $label);
+             $namaQr= $this->request->getPost('nama_produk').$_SESSION['id_mitra'].'_'. $idmax.'.png';
+
+             $result->saveToFile( FCPATH .$dir.'/'.$namaQr);
              if($isDataValid){
                 $data = array(
                 'nama_produk' => $this->request->getPost('nama_produk'),
@@ -251,10 +276,12 @@ class MyProduct extends BaseController
                 'produk_id_mitra'=>$this->request->getPost('id_mitra'),
                 'tgl_produksi'=> date("Y-m-d", strtotime($this->request->getPost('tgl_produksi'))),
                 'tgl_expired'=> date("Y-m-d", strtotime($this->request->getPost('tgl_expired'))),
-                'foto_depan'=>'product/'.$namafoto
+                'foto_depan'=>'product/'.$namafoto,
+                'qr_code'=>$namaQr
                 );
         
                 $this->ProM->updateproduct($data, $id_produk);
+
                 return redirect()->to('MyProduct');
                 //echo json_encode(array('status' => 'ok;', 'text' => ''));
              }else{
@@ -263,6 +290,11 @@ class MyProduct extends BaseController
             }
         }
     }
+
+     public function downloadqr($namaqr)
+     {
+         return $this->response->download('assetcustomer/img/Qrcode/'.$namaqr, null);
+     }
 
    
 }

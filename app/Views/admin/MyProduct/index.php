@@ -18,7 +18,7 @@
             <div class="card-body">
                <div class="table-responsive">
                   <table id="example" class="display" style="min-width: 845px">
-                     <thead>
+                     <thead >
                         <tr>
                             <th>Nama Produk </th>
                             <th>Deskripsi Prosuk</th>
@@ -42,7 +42,7 @@
                             <td><?php echo date('m-d-Y', strtotime($val['tgl_produksi']))?></td>
                              <td><?php echo date('m-d-Y', strtotime($val['tgl_expired']))?></td>
                              <td><img src="/assetcustomer/img/<?php echo $val['foto_depan'] ?>" style="height: 100px; width: auto;"></td>
-                             <td><img src="/assetcustomer/img/Qrcode/<?php echo $val['qr_code'] ?>" style="height: 100px; width: auto;"></td>
+                             <td><button style="border: none;" title="Preview Qr Code dan Download" data-bs-toggle="modal" data-bs-target="#modalpreview<?php echo $val['id_produk'] ?>"><img src="/assetcustomer/img/Qrcode/<?php echo $val['qr_code'] ?>" style="height: 100px; width: auto;"></button></td>
                                                    
 
                             <td>
@@ -63,16 +63,44 @@
 </div>
 </div>
 
+<?php foreach($Getproduk as $val) { ?>
+    <div id="modalpreview<?php echo $val['id_produk']  ?>" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Priview Dan Cetak Qr Code</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
 
+                <div class="card-body" id="preview<?php echo $val['id_produk'] ?>" name="preview<?php echo $val['id_produk'] ?>">
+                    <div class="text-center">
+                       <img src="/assetcustomer/img/Qrcode/<?php echo $val['qr_code'] ?>" class="rounded mx-auto d-block" >
+                    </div>
 
+                   
+                </div>
+
+                <div class="modal-footer">
+
+                    <a type="button" href="<?php echo base_url('MyProduct/downloadqr/'.$val['qr_code']) ?>" class="btn btn-primary"><i class="fa-solid fa-download  me-2"></i>Download</a>
+                    <button type="button" class="btn btn-primary" onclick="printJS({printable: '/assetcustomer/img/Qrcode/<?php echo $val['qr_code'] ?>', type: 'image',imageStyle: 'width:65%;margin-bottom:20px;'})"><i class="fa-solid fa-print me-2"></i>cetak </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<?php } ?>
+<script src="<?= base_url('assetadmin/js/print.min.js') ?>"></script>
 <script type="text/javascript">
     
     $(document).ready(function($){
-
+        
         $('#harga_produk').mask('000.000.000.000.000.000',{reverse: true});
         
     });
-     CKEDITOR.replace( 'editor1' );
+  
     function deletedata(id) {
      Swal.fire({
       title: 'Yakin Ingin menghapus data ini?',

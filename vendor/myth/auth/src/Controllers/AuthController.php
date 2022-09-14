@@ -7,6 +7,7 @@ use CodeIgniter\Session\Session;
 use Myth\Auth\Config\Auth as AuthConfig;
 use Myth\Auth\Entities\User;
 use Myth\Auth\Models\UserModel;
+use App\Models\PemilikMOdel;
 
 class AuthController extends Controller
 {
@@ -26,10 +27,11 @@ class AuthController extends Controller
     {
         // Most services in this controller require
         // the session to be started - so fire it up!
-        $this->session = service('session');
-        $this->UM = new UserModel();
+        $this->session= service('session');
+        $this->UM     = new UserModel();
         $this->config = config('Auth');
         $this->auth   = service('authentication');
+         $this->PM    =new PemilikModel();
     }
 
     //--------------------------------------------------------------------
@@ -93,9 +95,15 @@ class AuthController extends Controller
             return redirect()->to(route_to('reset-password') . '?token=' . $this->auth->user()->reset_hash)->withCookies();
         }
 
+        
+
         $redirectURL = session('redirect_url') ?? site_url('/');
         unset($_SESSION['redirect_url']);
 
+        $datasesion=$this->PM->getPemilikByid($_SESSION['logged_in']);
+        $this->session->set($datasesion);
+
+      
         return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));
     }
 
