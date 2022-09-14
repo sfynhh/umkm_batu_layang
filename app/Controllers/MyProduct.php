@@ -242,30 +242,6 @@ class MyProduct extends BaseController
                  $filefoto->move('assetcustomer/img/product');
                  $namafoto=$filefoto->getName();
              }
-
-            
-             $qrCode = QrCode::create(base_url('Produkdetail/'.$id_produk))
-             ->setEncoding(new Encoding('UTF-8'))
-             ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
-             ->setSize(300)
-             ->setMargin(10)
-             ->setRoundBlockSizeMode(new RoundBlockSizeModeMargin())
-             ->setForegroundColor(new Color(0, 0, 0))
-             ->setBackgroundColor(new Color(255, 255, 255));
-
-             $dir ="assetcustomer/img/Qrcode";
-            // Create generic logo
-             $logo = Logo::create( FCPATH .'/assetcustomer/img/logo/umkmlogo.png')
-             ->setResizeToWidth(150);
-
-            // Create generic label
-             $label = Label::create('umkmbatulayang.com')
-             ->setTextColor(new Color(54, 230, 48));
-
-             $result = $this->writer->write($qrCode, $logo, $label);
-             $namaQr= $this->request->getPost('nama_produk').$_SESSION['id_mitra'].'_'.$id_produk.'.png';
-
-             $result->saveToFile( FCPATH .$dir.'/'.$namaQr);
              if($isDataValid){
                 $data = array(
                 'nama_produk' => $this->request->getPost('nama_produk'),
@@ -277,7 +253,6 @@ class MyProduct extends BaseController
                 'tgl_produksi'=> date("Y-m-d", strtotime($this->request->getPost('tgl_produksi'))),
                 'tgl_expired'=> date("Y-m-d", strtotime($this->request->getPost('tgl_expired'))),
                 'foto_depan'=>'product/'.$namafoto,
-                'qr_code'=>$namaQr
                 );
         
                 $this->ProM->updateproduct($data, $id_produk);
