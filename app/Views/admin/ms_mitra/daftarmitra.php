@@ -32,7 +32,7 @@
                             <td><?php echo $val->alamat_mitra ?></td>
                             <td><?php echo $val->no_telepon_mitra ?></td>
                             <td><?php echo $val->email_mitra ?></td>
-                             <td><?php echo $val->nama_pemilik ?></td>
+                             <td><?php echo $val->nama_pemilik_mitra ?></td>
 
                             <td>
                                <div class="d-flex">

@@ -35,7 +35,7 @@
                                 <div class="widget">
                                     <div class="shop-widget-banner text-center">
                                         <a href="shop.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/sidebar_shop_ad.jpg" alt=""></a>
+product/tradisonal_food_2.jpg" alt="" style="height: 347px;width: 259 ;"></a>
                                     </div>
                                 </div>
                             </aside>
@@ -44,7 +44,7 @@ product/sidebar_shop_ad.jpg" alt=""></a>
                             <div class="shop-discount-area">
                                 <div class="discount-content shop-discount-content">
                                     <span>healthy food</span>
-                                    <h4 class="title"><a href="shop.html">Traditional Food</a></h4>
+                                    <h4 class="title"><a href="<?php echo base_url('ProdukList/all') ?>">Traditional Food</a></h4>
                                     <p>Super Offer is coming soon</p>
                                   
                                 </div>

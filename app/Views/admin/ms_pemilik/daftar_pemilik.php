@@ -28,7 +28,7 @@
                         <?php foreach($pemilik as $val){ ?>
                          <tr>
 
-                            <td><?php echo $val->nama_pemilik ?></td>
+                            <td><?php echo $val->nama_pemilik_mitra ?></td>
                             <td><?php echo $val->alamat_pemilik_mitra ?></td>
                             <td><?php echo $val->no_telfon_pemilik_mitra ?></td>
                             <td><?php echo $val->email_pemilik_mitra ?></td>
@@ -70,7 +70,7 @@
                     <input type="hidden" name="id_pemilik" value="<?= $val->id_pemilik_mitra ?>">
                     <div class="mb-3">
                         <label class="mb-1"><strong>Nama Pemilik</strong></label>
-                        <input type="text" class="form-control form-custom " name="nama_pemilik" aria-describedby="emailHelp" placeholder="nama mitra" value="<?= $val->nama_pemilik ?>">
+                        <input type="text" class="form-control form-custom " name="nama_pemilik" aria-describedby="emailHelp" placeholder="nama mitra" value="<?= $val->nama_pemilik_mitra ?>">
                     </div>
 
                     <div id="nama_pemilik">
@@ -165,13 +165,13 @@ function deletedata(id) {
 
 
         $.ajax({
-         url:"<?php echo base_url('Mitra/delete') ?>",
+         url:"<?php echo base_url('Pemilik/delete') ?>",
          global:false,
          async:true,
          type:'post',
          dataType:'json',
          data: ({
-            id_mitra:id,
+            id_pemilik:id,
         }),
          success : function(e) {
              if(e.status == 'ok;') 

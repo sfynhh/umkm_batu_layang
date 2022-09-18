@@ -58,7 +58,7 @@
                             </ul>
                         </div>
                         <div class="ingredients-btn-wrap">
-                            <a href="shop.html" class="btn">Shop now</a>
+                            <a href="<?php echo base_url('ProdukList/all') ?>" class="btn">Shop now</a>
                            
                         </div>
                     </div>

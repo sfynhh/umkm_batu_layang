@@ -13,7 +13,7 @@
                                     </div>
                                     <div class="post-avatar-content">
                                         <h5><?php echo $detailmitra['nama_mitra'] ?></h5>
-                                        <p>Pemilik : <?php echo $detailmitra['nama_pemilik'] ?></p>
+                                        <p>Pemilik : <?php echo $detailmitra['nama_pemilik_mitra'] ?></p>
                                         <p>Alamat : <?php echo $detailmitra['alamat_mitra'] ?></p>
                                         <div class="blog-details-social">
                                         

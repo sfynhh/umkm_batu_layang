@@ -4,7 +4,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2021</p>
+                <p>UMKM Batu Layang; Developed by <a href="https://dexignlab.com/" target="_blank">Mahasiswa Telkom University</a> 2019</p>
             </div>
         </div>
         <!--**********************************

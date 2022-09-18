@@ -185,7 +185,7 @@
                 </ul>
 				
 				<div class="copyright">
-					<p><strong>Jobick Job Admin</strong> © 2021 All Rights Reserved</p>
+					<p><strong>Umkm Batu layang</strong></p>
 					
 				</div>
 			</div>

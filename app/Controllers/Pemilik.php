@@ -29,8 +29,8 @@ class Pemilik extends BaseController
         ]
 
     ];
-    dd($data['datacontent']['pemilik']);
-   // return view('admin/headnav', $data);
+    //dd($data['datacontent']['pemilik']);
+    return view('admin/headnav', $data);
     }
 
     public function editjson()
@@ -69,7 +69,7 @@ class Pemilik extends BaseController
          if($isDataValid){
             $id = $this->request->getPost('id_pemilik');
             $data = array(
-            'nama_pemilik'         => $this->request->getPost('nama_pemilik'),
+            'nama_pemilik_mitra'         => $this->request->getPost('nama_pemilik'),
             'email_pemilik_mitra'  => $this->request->getPost('email'),
             'no_telfon_pemilik_mitra'      => $this->request->getPost('no_telepon'),
             'alamat_pemilik_mitra' => $this->request->getPost('alamat'),
@@ -88,8 +88,8 @@ class Pemilik extends BaseController
     
     public function delete()
     {
-        $id = $this->request->getPost('id_usr');
-        $this->userModel->deleteUser($id);
+        $id = $this->request->getPost('id_pemilik');
+        $this->PM->deletePemilik($id);
         //session()->setFlashdata('success', 'Data Departemen Berhasil Dihapus');
 
         echo json_encode(array('status' => 'ok;', 'text' => ''));

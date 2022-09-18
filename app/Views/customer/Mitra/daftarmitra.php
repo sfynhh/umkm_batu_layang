@@ -21,7 +21,7 @@
                         </div>
                         <div class="content">
                             <h5><?php echo $val->nama_mitra ?></h5>
-                            <p>Pemilik : <?php echo $val->nama_pemilik ?></p>
+                            <p>Pemilik : <?php echo $val->nama_pemilik_mitra ?></p>
                         </div>
                     </div>
                 </div>

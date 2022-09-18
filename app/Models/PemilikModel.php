@@ -35,6 +35,12 @@ class PemilikModel extends Model
         return $query;
     }
 
+     public function deletePemilik($id)
+    {
+        $query = $this->db->table('m_pemilik_mitra')->delete(array('id_pemilik_mitra' => $id));
+        return $query;
+    }
+
     public function updatepw($newpw){
         $sql="UPDATE users set password_hash = '$newpw' where id=1";
         return $this->db->query($sql);
