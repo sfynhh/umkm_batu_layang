@@ -41,14 +41,6 @@ product/tradisonal_food_2.jpg" alt="" style="height: 347px;width: 259 ;"></a>
                             </aside>
                         </div>
                         <div class="col-9">
-                            <div class="shop-discount-area">
-                                <div class="discount-content shop-discount-content">
-                                    <span>healthy food</span>
-                                    <h4 class="title"><a href="<?php echo base_url('ProdukList/all') ?>">Traditional Food</a></h4>
-                                    <p>Super Offer is coming soon</p>
-                                  
-                                </div>
-                            </div>
                             <div class="shop-top-meta mb-30">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-7">
