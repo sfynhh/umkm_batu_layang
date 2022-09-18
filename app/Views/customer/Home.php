@@ -45,7 +45,7 @@
                                 <div class="category-item active">
                                     <a href="<?php echo base_url('ProdukList/'.$val->id_kategori) ?>" class="category-link"></a>
                                     <div class="category-thumb">
-                                        <img src="<?php echo base_url('assetcustomer/img/'.$val->foto_kategori) ?>" alt="" style="width: 120px;height: 120px;">
+                                        <img src="<?php echo base_url('assetcustomer/img/foto_kategori/kategorikerupuk.jpg')?>" alt="" style="width: 120px;height: 120px;">
                                     </div>
                                     <div class="category-content">
                                         <h6 class="title"><?php echo $val->nama_kategori ?></h6>
