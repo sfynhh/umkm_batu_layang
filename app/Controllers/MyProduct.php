@@ -281,5 +281,90 @@ class MyProduct extends BaseController
          return $this->response->download('assetcustomer/img/Qrcode/'.$namaqr, null);
      }
 
+     public function daftarkategori(){
+
+        $data =[
+            'titletab'=>'UMKM BATU LAYANG | Kategori Produk',
+            'contenttit'=>'Kategroi Produk',
+            'active'=>'active',
+            'content'=>'admin/MyProduct/kategori_produk',
+            'datacontent'=>[
+                            'kategori'=>$this->ProM->getkategori()
+                            ]
+            ];
+        echo view('admin/headnav', $data);
+
+     }
+
+     public function addKategori()
+     {
+          $this->validation->setRules([
+            'nama_kategori' => [
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Nama Kategori Belum diisi'
+                ]
+            ],
+         ]);
+
+         $isDataValid = $this->validation->withRequest($this->request)->run();
+        
+             if($isDataValid){
+                $data = array(
+                'nama_kategori' => $this->request->getPost('nama_kategori')
+                );
+        
+                $this->ProM->addKategori($data);
+
+                //return redirect()->to('MyProduct');
+                echo json_encode(array('status' => 'ok;', 'text' => ''));
+             }else{
+             $validation = $this->validation;
+              $error=$validation->getErrors();
+              //print_r($error);
+              echo json_encode(array('status' => 'error;', 'text' => '', 'data'=>$error));
+             }
+         }
+
+    public function editKategori()
+     {
+          $this->validation->setRules([
+            'nama_kategori' => [
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Nama Kategori Belum diisi'
+                ]
+            ],
+         ]);
+
+         $isDataValid = $this->validation->withRequest($this->request)->run();
+            
+             if($isDataValid){
+                $id=$this->request->getPost('id_kategori');
+                $data = array(
+                'nama_kategori' => $this->request->getPost('nama_kategori')
+                );
+        
+                $this->ProM->updatekategori($data, $id);
+
+                //return redirect()->to('MyProduct');
+                echo json_encode(array('status' => 'ok;', 'text' => ''));
+             }else{
+             $validation = $this->validation;
+              $error=$validation->getErrors();
+              //print_r($error);
+              echo json_encode(array('status' => 'error;', 'text' => '', 'data'=>$error));
+             }
+         }
+
+
+     public function deleteKategori()
+    {
+        $id = $this->request->getPost('id_kategori');
+        $this->ProM->deleteKategori($id);
+        echo json_encode(array('status' => 'ok;', 'text' => ''));
+
+    }
+
    
 }

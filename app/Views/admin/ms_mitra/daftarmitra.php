@@ -66,7 +66,7 @@
 
             <div class="card-body">
                 <div class="basic-form">
-                 <form id="frmedit">
+                 <form id="frmedit<?php echo $val->id_mitra ?>">
                     <input type="hidden" name="id_mitra" value="<?= $val->id_mitra ?>">
                     <div class="mb-3">
                         <label class="mb-1"><strong>Nama Mitra(Toko)</strong></label>

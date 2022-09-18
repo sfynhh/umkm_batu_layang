@@ -48,7 +48,7 @@ $routes->get('UpdateProduk/(:any)', 'MyProduct::updateProduk/$1');
 $routes->get('Users', 'Users::index');
 $routes->get('DaftarMitra', 'Mitra::DaftarMitra');
 $routes->get('Pemilik', 'Pemilik::index');
-
+$routes->get('KategoriProduk', 'MyProduct::daftarkategori');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

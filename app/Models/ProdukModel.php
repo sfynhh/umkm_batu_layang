@@ -27,6 +27,16 @@ class ProdukModel extends Model
          $query = $this->db->table('m_produk')->update($data, array('id_produk' => $id));
         return $query;
     }
+    public function addKategori($data)
+    {
+        $query = $this->db->table('ms_kategori_produk')->insert($data);
+        return $query;
+    }
+    public function updatekategori($data, $id)
+    {
+         $query = $this->db->table('ms_kategori_produk')->update($data, array('id_kategori' => $id));
+        return $query;
+    }
 
     public function maxid()
     {
@@ -114,6 +124,11 @@ class ProdukModel extends Model
     public function deleteProduk($id)
     {
         $query = $this->db->table($this->table)->delete(array('id_produk' => $id));
+        return $query;
+    }
+    public function deleteKategori($id)
+    {
+        $query = $this->db->table('ms_kategori_produk')->delete(array('id_kategori' => $id));
         return $query;
     }
 

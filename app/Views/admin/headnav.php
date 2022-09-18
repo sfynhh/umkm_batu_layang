@@ -167,13 +167,20 @@
                       <i class="fa-solid fa-universal-access"></i>
                         <span class="nav-text">Pemilik </span>
                     </a>
+                     </li>
                      <li class="<?php //echo (isset($active))? $active :'' ?>"><a href="<?php echo base_url('DaftarMitra') ?>">
                         <i class="fa-solid fa-store"></i>
                         <span class="nav-text">Mitra </span>
                     </a>
                     </li>
-                    </li>
+
+                   
                     <?php } ?>
+                    <li class="<?php //echo (isset($active))? $active :'' ?>"><a href="<?php echo base_url('KategoriProduk') ?>">
+                        <i class="fa-solid fa-cubes-stacked"></i>
+                        <span class="nav-text">Kategori Produk </span>
+                    </a>
+                    </li>
                     <li class="<?php echo (isset($active))? $active :'' ?>"><a href="<?php echo base_url('MyProduct') ?>">
                             <i class="fa-solid fa-boxes-stacked"></i>
                             <span class="nav-text">Produk Saya</span>
