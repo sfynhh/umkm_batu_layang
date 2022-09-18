@@ -70,7 +70,7 @@
                                     <ul>
                                         <li class="header-phone">
                                             <div class="icon"><i class="flaticon-telephone"></i></div>
-                                            <a href="tel:1234566789"><span>Hubungi Kami</span>+185 4124 650</a>
+                                            <a href="tel:1234566789"><span>Hubungi Kami</span>+62 1277 2572 85</a>
                                         </li>
                                         <li class="header-user"><a href="#"><i class="flaticon-user"></i></a></li>
                                         <!-- <li class="header-wishlist">

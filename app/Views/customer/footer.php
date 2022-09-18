@@ -42,7 +42,7 @@
                                     <ul>
                                         <li>
                                            <div class="icon"><i class="flaticon-telephone-1"></i></div>
-                                            <p class="number"><a href="tel:12027993245">+62 8146 1216 787</a></p> 
+                                            <p class="number"><a href="tel:621277257285">+62 1277 2572 85</a></p> 
                                         </li>
                                     </ul>
                                 </div>
@@ -55,7 +55,7 @@
                                     <ul>
                                         <li>
                                            <div class="icon"><i class="flaticon-mail"></i></div>
-                                            <p><a href="mailto:support@vegen.com">sofyanhady81@gmail.com</a></p>
+                                            <p><a href="mailto:support@vegen.com">p2mddpm@gmail.com</a></p>
                                         </li>
                                     </ul>
                                 </div>
