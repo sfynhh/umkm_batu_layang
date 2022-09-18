@@ -63,6 +63,8 @@ class MyProduct extends BaseController
     if(!isset($_POST['button'])){
       echo view('admin/headnav', $data);
       }else{
+
+       
         $this->validation->setRules([
             'nama_produk' => [
                 'rules'=>'required',
@@ -105,13 +107,8 @@ class MyProduct extends BaseController
                 'errors'=>[
                     'required'=>'Tanggal expired belum diisi'
                 ]
-            ],
-            'id_mitra'=>[
-                'rules'=> 'required',
-                'errors'=>[
-                    'required'=>'mitra belum diisi'
-                ]
-            ],
+            ]
+
 
 
          ]);
@@ -179,7 +176,9 @@ class MyProduct extends BaseController
     {
         $id = $this->request->getPost('id_produk');
         $this->ProM->deleteProduk($id);
+        unlink('assetcustomer/img/Qrcode/'.$this->request->getPost('filegambar'));
         echo json_encode(array('status' => 'ok;', 'text' => ''));
+
     }
 
     public function updateProduk($id){
@@ -240,14 +239,6 @@ class MyProduct extends BaseController
                     'required'=>'Tanggal expired belum diisi'
                 ]
             ],
-            'id_mitra_1'=>[
-                'rules'=> 'required',
-                'errors'=>[
-                    'required'=>'mitra belum diisi'
-                ]
-            ],
-
-
 
          ]);
 

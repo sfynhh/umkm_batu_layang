@@ -54,7 +54,7 @@
                             <td>
                             <div class="d-flex">
                                 <a href="<?php echo base_url('UpdateProduk/'.$val['id_produk']) ?>"  class="btn btn-primary shadow btn-xs sharp me-1" title="ubah data"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="#" onclick='deletedata(<?php echo $val['id_produk']; ?>)' class="btn btn-danger shadow btn-xs sharp me-1" title="hapus data"><i class="fa fa-trash"></i></a>
+                                <a href="#" onclick='deletedata(<?php echo $val['id_produk']; ?>, "<?php echo $val['qr_code'] ?>")' class="btn btn-danger shadow btn-xs sharp me-1" title="hapus data"><i class="fa fa-trash"></i></a>
                                
                             </div>
                                
@@ -107,7 +107,7 @@
         
     });
   
-    function deletedata(id) {
+    function deletedata(id, filegambar) {
      Swal.fire({
       title: 'Yakin Ingin menghapus data ini?',
       text: "Data tidak akan bisa kembali",
@@ -128,6 +128,7 @@
              dataType:'json',
              data: ({
                 id_produk:id,
+                filegambar : filegambar
             }),
              success : function(e) {
                  if(e.status == 'ok;') 
