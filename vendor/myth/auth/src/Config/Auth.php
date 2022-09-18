@@ -179,7 +179,7 @@ class Auth extends BaseConfig
      *
      * @var bool
      */
-    public $allowRegistration = true;
+    public $allowRegistration = null;
 
     /**
      * --------------------------------------------------------------------
@@ -203,7 +203,7 @@ class Auth extends BaseConfig
      *
      * @var string|null Name of the ResetterInterface class
      */
-    public $activeResetter =null;
+    public $activeResetter = null;
 
     /**
      * --------------------------------------------------------------------
