@@ -71,7 +71,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-6">
                             <div class="copyright-text">
-                                <p>Copyright &copy; 2021 Ganic All Rights Reserved</p>
+                                <p> Develop By Mahasiswa Telkom University 2020</p>
                             </div>
                         </div>
                         <div class="col-md-6">

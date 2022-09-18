@@ -52,13 +52,13 @@
                                             <li>
                                                 <div class="icon"><i class="fas fa-phone-alt"></i></div>
                                                 <div class="content">
-                                                    <p>+9 (256) 254 9568</p>
+                                                    <p>+62 1277 2572 85</p>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="icon"><i class="fas fa-envelope-open"></i></div>
                                                 <div class="content">
-                                                    <p>sofyanhady81@gmail.com</p>
+                                                    <p>p2mddpm@gmail.com</p>
                                                 </div>
                                             </li>
                                         </ul>
