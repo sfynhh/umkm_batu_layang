@@ -122,7 +122,7 @@
 										<img src="<?php echo base_url('') ?>/assetadmin/images/profile/userprofile.jpg" width="20" alt="" />
 										<div class="d-flex align-items-center sidebar-info" style="padding-left:10px;">
 											<div>
-												<span class="font-w400 d-block" style="color:white;"><?php echo user()->nama_mitra.' ('.user()->nama_pemilik.')' ?></span>
+												<span class="font-w400 d-block" style="color:white;"><?php echo in_groups('superadmin')? user()->username : user()->nama_mitra.' ('.user()->nama_pemilik.')' ?></span>
 												<small class="text-end font-w400"><?php // (in_groups('hrd superadmin'))?'HRD Superadmin':'HRD Admin' ?></small>
 											</div>	
 											<i class="fas fa-chevron-down"></i>
@@ -157,12 +157,29 @@
 							<span class="nav-text">Dashboard</span>
 						</a>
                     </li>
-
-                    <li <?php echo (isset($active))? $active :'' ?>><a href="<?php echo base_url('MyProduct') ?>">
+                    <?php if(in_groups('superadmin')) { ?>
+                    <li class="<?php //echo (isset($active))? $active :'' ?>"><a href="<?php echo base_url('User') ?>">
+                        <i class="fa-solid fa-users"></i>
+                        <span class="nav-text">User </span>
+                    </a>
+                    </li>
+                     <li class="<?php //echo (isset($active))? $active :'' ?>"><a href="<?php echo base_url('Pemilik') ?>">
+                      <i class="fa-solid fa-universal-access"></i>
+                        <span class="nav-text">Pemilik </span>
+                    </a>
+                     <li class="<?php //echo (isset($active))? $active :'' ?>"><a href="<?php echo base_url('DaftarMitra') ?>">
+                        <i class="fa-solid fa-store"></i>
+                        <span class="nav-text">Mitra </span>
+                    </a>
+                    </li>
+                    </li>
+                    <?php } ?>
+                    <li class="<?php echo (isset($active))? $active :'' ?>"><a href="<?php echo base_url('MyProduct') ?>">
                             <i class="fa-solid fa-boxes-stacked"></i>
                             <span class="nav-text">Produk Saya</span>
                         </a>
                     </li>
+                    
                     
 					
                 </ul>

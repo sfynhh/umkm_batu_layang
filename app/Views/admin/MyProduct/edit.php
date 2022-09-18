@@ -104,6 +104,26 @@
 								<?php } ?>
 
 							</div>
+							<?php if (in_groups('superadmin')) { ?>
+								<div class="mb-3">
+								<label><strong>Pilih Mitra</strong></label>
+								<select class="default-select form-control wide <?= isset($validation) ? ($validation->hasError('id_mitra'))?'is-invalid':'':''; ?> form-custom" name="id_mitra_1">
+									<option value="" <?= $val['produk_id_mitra']==""?'selected':'';?>>Choose...</option>
+									<?php foreach($mitra as $val2){ ?>
+										<option value="<?php echo $val2->id_mitra; ?>" <?= $val['produk_id_mitra']==$val2->id_mitra ?'selected':'';?>>
+											<?php echo $val2->nama_mitra ?>
+
+										</option>
+									<?php } ?>
+
+								</select>
+								<?php if(isset($validation)){ ?>
+									<p style="padding-top:10px;"> <span class="badge light badge-danger"><?= $validation->getError('id_mitra') ?></span></p>
+								<?php } ?>
+
+
+							</div>
+							<?php } ?>
 							<div class=" mb-3">
 								<input type="hidden" name="foto_produk_old" value="<?php echo str_replace("product/","", $val['foto_depan']) ?>">
 								<label><strong>Foto Produk</strong></label>

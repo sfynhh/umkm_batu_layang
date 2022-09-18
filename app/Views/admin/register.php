@@ -10,7 +10,7 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
 									<div class="text-center mb-3">
-										<a href="index.html"><img src="images/logo-full.png" alt=""></a>
+										<a href="<?php echo base_url() ?>"><img src="<?php echo base_url('') ?>/assetcustomer/img/logo/umkmlogo.png" alt="" class="custom_logo" /></a>
 									</div>
                                     <h4 class="text-center mb-4"><?=lang('Auth.register')?></h4>
                                     <?= view('Myth\Auth\Views\_message_block') ?>

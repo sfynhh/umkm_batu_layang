@@ -26,6 +26,9 @@
                              <th>Harga Produk</th>
                             <th>Tanggal Produksi</th>
                             <th>Tanggal Expired</th>
+                            <?php if (in_groups('superadmin')) { ?>
+                                <th>Pemilik produk</th>
+                           <?php } ?>
                             <th>Foto Produk</th>
                             <th>QR Code</th>
                             <th>Aksi</th>
@@ -41,6 +44,9 @@
                             <td><?php echo rupiah($val['harga_produk']) ?></td>
                             <td><?php echo date('m-d-Y', strtotime($val['tgl_produksi']))?></td>
                              <td><?php echo date('m-d-Y', strtotime($val['tgl_expired']))?></td>
+                              <?php if (in_groups('superadmin')) { ?>
+                                <td><?php echo $val['nama_mitra'] ?></td>
+                           <?php } ?>
                              <td><img src="/assetcustomer/img/<?php echo $val['foto_depan'] ?>" style="height: 100px; width: auto;"></td>
                              <td><button style="border: none;" title="Preview Qr Code dan Download" data-bs-toggle="modal" data-bs-target="#modalpreview<?php echo $val['id_produk'] ?>"><img src="/assetcustomer/img/Qrcode/<?php echo $val['qr_code'] ?>" style="height: 100px; width: auto;"></button></td>
                                                    

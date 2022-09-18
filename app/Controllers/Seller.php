@@ -30,4 +30,11 @@ class Seller extends BaseController
        echo view('admin/headnav', $data);
 	}
 
+    // public function resetpw(){
+    //     $pw='umkmbatulayang2022';
+    //     $password_hash = Password::hash($pw);
+    //     $this->PM->updatepw($password_hash);
+    //     echo 'ok';
+    // }
+
 }

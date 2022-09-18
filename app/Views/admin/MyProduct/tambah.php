@@ -97,6 +97,25 @@
 									<p style="padding-top:10px;"> <span class="badge light badge-danger"><?= $validation->getError('tgl_expired') ?></span></p>
 								<?php } ?>
 							</div>
+							<?php if(in_groups('superadmin')) {?>
+								<div class="mb-3">
+								<label><strong>Pilih MItra</strong></label>
+								<select  class="default-select form-control wide <?= isset($validation) ? ($validation->hasError('id_mitra'))?'is-invalid':'':''; ?> form-custom" name="id_mitra">
+									<option value="" <?= set_value('id_mitra')==""?'selected':'';?>>Choose...</option>
+									<?php foreach($mitra as $val){ ?>
+										<option value="<?php echo $val->id_mitra; ?>" <?= set_value('id_mitra')==$val->id_mitra ?'selected':'';?>>
+											<?php echo $val->nama_mitra ?>
+
+										</option>
+									<?php } ?>
+
+								</select>
+								<?php if(isset($validation)){ ?>
+									<p style="padding-top:10px;"> <span class="badge light badge-danger"><?= $validation->getError('id_mitra') ?></span></p>
+								<?php } ?>
+
+							</div>
+							<?php } ?>
 							<div class=" mb-3">
 								<label><strong>Foto Produk</strong></label>
 							<div class="input-group mb-3">

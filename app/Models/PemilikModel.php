@@ -21,6 +21,24 @@ class PemilikModel extends Model
                     ->where('id_user_mitra', $id)->get()->getRowArray();
         return $query;
     }
+
+    public function getPemilik(){
+         $query = $this->db->table('m_pemilik_mitra')
+                      ->join('users', 'users.id=m_pemilik_mitra.id_user_mitra')
+                    ->get()->getResult();
+        return $query;
+    }
+
+    public function updatepemilik($data, $id)
+    {
+        $query = $this->db->table('m_pemilik_mitra')->update($data, array('id_pemilik_mitra' => $id));
+        return $query;
+    }
+
+    public function updatepw($newpw){
+        $sql="UPDATE users set password_hash = '$newpw' where id=1";
+        return $this->db->query($sql);
+    }
     // public function jumlahmitra()
     // {
     //     $sql="SELECT count(*) as jumlah from m_mitra";

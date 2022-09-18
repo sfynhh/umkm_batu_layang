@@ -11,6 +11,7 @@ use Endroid\QrCode\Label\Label;
 use Endroid\QrCode\Logo\Logo;
 use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
 use Endroid\QrCode\Writer\PngWriter;
+use App\Models\MitraModel;
 
 
 class MyProduct extends BaseController
@@ -22,11 +23,14 @@ class MyProduct extends BaseController
          $this->validation =  \Config\Services::validation();
         $this->ProM = new ProdukModel();
         $this->writer = new PngWriter();
+        $this->MM = new MitraModel();
          
     }
 
     public function index()
 	{  
+
+    (in_groups('superadmin')) ? $getproduk=$this->ProM->getprodukall() : $getproduk=$this->ProM->getprodukbymitra($_SESSION['id_mitra']);
 
     $data =[
             'titletab'=>'UMKM BATU LAYANG | Produk Saya',
@@ -34,7 +38,7 @@ class MyProduct extends BaseController
             'active'=>'active',
             'content'=>'admin/MyProduct/index',
             'datacontent'=>[
-                            'Getproduk'=>$this->ProM->getprodukbymitra($_SESSION['id_mitra']),
+                            'Getproduk'=>$getproduk,
                             'kategori'=>$this->ProM->getkategori()
                             ]
             ];
@@ -52,7 +56,8 @@ class MyProduct extends BaseController
         'active'=>'active',
         'content'=>'admin/MyProduct/tambah',
         'datacontent'=>[
-                        'kategori'=>$this->ProM->getkategori()
+                        'kategori'=>$this->ProM->getkategori(),
+                        'mitra' =>$this->MM->getmitra()
                         ]
     ];
     if(!isset($_POST['button'])){
@@ -99,6 +104,12 @@ class MyProduct extends BaseController
                 'rules'=> 'required',
                 'errors'=>[
                     'required'=>'Tanggal expired belum diisi'
+                ]
+            ],
+            'id_mitra'=>[
+                'rules'=> 'required',
+                'errors'=>[
+                    'required'=>'mitra belum diisi'
                 ]
             ],
 
@@ -145,7 +156,7 @@ class MyProduct extends BaseController
             'deskripsi_produk' => $this->request->getPost('deskripsi'),
             'stok_produk'=>$this->request->getPost('stok'),
             'harga_produk' => str_replace(".", "", $this->request->getPost('harga_produk')),
-            'produk_id_mitra'=>$_SESSION['id_mitra'],
+            'produk_id_mitra'=>(in_groups('superadmin')) ? $this->request->getPost('id_mitra') : $_SESSION['id_mitra'] ,
             'tgl_produksi'=> date("Y-m-d", strtotime($this->request->getPost('tgl_produksi'))),
             'tgl_expired'=> date("Y-m-d", strtotime($this->request->getPost('tgl_expired'))),
             'foto_depan'=>'product/'.$namafoto,
@@ -179,7 +190,8 @@ class MyProduct extends BaseController
         'content'=>'admin/MyProduct/edit',
         'datacontent'=>[
                         'kategori'=>$this->ProM->getkategori(),
-                        'val' =>$this->ProM->produkdetail($id)
+                        'val' =>$this->ProM->produkdetail($id),
+                        'mitra' =>$this->MM->getmitra()
                         ]
     ];
     if(!isset($_POST['button'])){
@@ -228,6 +240,13 @@ class MyProduct extends BaseController
                     'required'=>'Tanggal expired belum diisi'
                 ]
             ],
+            'id_mitra_1'=>[
+                'rules'=> 'required',
+                'errors'=>[
+                    'required'=>'mitra belum diisi'
+                ]
+            ],
+
 
 
          ]);
@@ -249,7 +268,7 @@ class MyProduct extends BaseController
                 'deskripsi_produk' => $this->request->getPost('deskripsi'),
                 'stok_produk'=>$this->request->getPost('stok'),
                 'harga_produk' => str_replace(".", "", $this->request->getPost('harga_produk')),
-                'produk_id_mitra'=>$this->request->getPost('id_mitra'),
+                'produk_id_mitra'=>(in_groups('superadmin')) ? $this->request->getPost('id_mitra_1') : $this->request->getPost('id_mitra'),
                 'tgl_produksi'=> date("Y-m-d", strtotime($this->request->getPost('tgl_produksi'))),
                 'tgl_expired'=> date("Y-m-d", strtotime($this->request->getPost('tgl_expired'))),
                 'foto_depan'=>'product/'.$namafoto,
