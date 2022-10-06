@@ -109,22 +109,24 @@ class User extends BaseController
             );
             $this->userModel->createUserGrup($data2);
             $id_user=$this->userModel->max_iduser();
-            $id_pemilik =$this->userModel->max_idpemilik();
+            
             $datapemimilik=array(
-                    'nama_pemilik' =>$this->request->getPost('nama_pemilik'),
+                    'nama_pemilik_mitra' =>$this->request->getPost('nama_pemilik'),
                     'alamat_pemilik_mitra'=>$this->request->getPost('alamat'),
                     'no_telfon_pemilik_mitra'=>$this->request->getPost('no_telepon'),
                     'email_pemilik_mitra'=>$this->request->getPost('email'),
-                    'id_user_mitra' =>$id_user,
+                    'id_user_mitra' =>$id_user-1,
             );
+            $savedatapemilik=$this->userModel->createdatapemilik($datapemimilik);
+            $id_pemilik =$this->userModel->max_idpemilik();
             $datamitra=array(
                     'nama_mitra'=>$this->request->getPost('nama_mitra'),
                     'alamat_mitra'=>$this->request->getPost('alamat'),
                     'no_telepon_mitra'=>$this->request->getPost('no_telepon'),
                     'email_mitra'=>$this->request->getPost('email'),
-                    'id_pemilik'=>$id_pemilik,
+                    'id_pemilik'=>$id_pemilik-1,
             );
-            $savedatapemilik=$this->userModel->createdatapemilik($datapemimilik);
+            
             $savedatamitra=$this->userModel->createdatamitra($datamitra);
             //session()->setFlashdata('success', 'Data Departemen Berhasil Ditambahkan');
              echo json_encode(array('status' => 'ok;', 'text' => '', 'cekid'=>$idusernew['idnew']));
