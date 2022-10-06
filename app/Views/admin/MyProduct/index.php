@@ -39,7 +39,13 @@
                          <tr>
 
                             <td><?php echo $val['nama_produk'] ?></td>
-                            <td><?php echo $val['deskripsi_produk'] ?></td>
+                            <td>
+                                <div class="d-flex">
+                                    <?php echo substr($val['deskripsi_produk'], 0, 20) ?>...
+                                <a href="#"  data-bs-toggle="modal" data-bs-target="#modaldeskripsi<?php echo $val['id_produk'] ?>" class="btn btn-info shadow btn-xs sharp me-1" title="lihat Deskripsi lengkap"><i class="fa-solid fa-circle-info"></i></a>
+                              </div>
+
+                            </td>
                             <td><?php echo $val['stok_produk'] ?></td>
                             <td><?php echo rupiah($val['harga_produk']) ?></td>
                             <td><?php echo date('m-d-Y', strtotime($val['tgl_produksi']))?></td>
@@ -91,6 +97,29 @@
 
                     <a type="button" href="<?php echo base_url('MyProduct/downloadqr/'.$val['qr_code']) ?>" class="btn btn-primary"><i class="fa-solid fa-download  me-2"></i>Download</a>
                     <button type="button" class="btn btn-primary" onclick="printJS({printable: '/assetcustomer/img/Qrcode/<?php echo $val['qr_code'] ?>', type: 'image',imageStyle: 'width:65%;margin-bottom:20px;'})"><i class="fa-solid fa-print me-2"></i>cetak </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<?php } ?>
+
+<?php foreach($Getproduk as $val) { ?>
+    <div id="modaldeskripsi<?php echo $val['id_produk']  ?>" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Deskripsi Prosuk</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+
+                <div class="card-body">
+                    <div class="text-center">
+                        <?php echo $val['deskripsi_produk'] ?>
+                    </div >
+                   
                 </div>
 
             </div>

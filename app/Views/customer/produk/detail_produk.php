@@ -70,10 +70,18 @@
                                         <!-- <li>CO : <span>Ganic</span></li> -->
                                     </ul>
                                 </div>
-                                <div class="shop-perched-info">
+                                <div class="row">
+                                    
+                                     <div class="col-md-4 shop-perched-info">
                                  
-                                    <a href="https://wa.me/+6281461216787 " class="btn btn-primary" style="background-color:green;">Order Now</a>
+                                    <a href="https://wa.me/+62895322050880" class="btn btn-primary" style="background-color:green;">Order Now</a>
+                                    </div>
+                                    <div class="col-md-4 shop-perched-info">
+                                 
+                                    <a href="https://shopee.co.id/umkmcikakak" class="btn btn-primary" style="background-color:#fa953c;">Order From Shopee</a>
+                                     </div>
                                 </div>
+                                
                                 
                             </div>
                         </div>
