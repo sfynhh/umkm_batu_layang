@@ -32,12 +32,6 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="widget">
-                                    <div class="shop-widget-banner text-center">
-                                        <a href="shop.html"><img src="<?php echo base_url('') ?>/assetcustomer/img/
-product/tradisonal_food_2.jpg" alt="" style="height: 347px;width: 259 ;"></a>
-                                    </div>
-                                </div>
                             </aside>
                         </div>
                         <div class="col-9">
@@ -116,7 +110,7 @@ product/tradisonal_food_2.jpg" alt="" style="height: 347px;width: 259 ;"></a>
                                                 </div>
                                                 <div class="sp-product-content"><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`l"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
-                                                    <a href="https://wa.me/+6281461216787" class="btn btn-primary">Order Now</a>
+                                                    <a href="https://wa.me/+62895322050880" class="btn btn-primary">Order Now</a>
                                                     </div>
                                                 </div>
                                               </div>
@@ -165,7 +159,7 @@ product/tradisonal_food_2.jpg" alt="" style="height: 347px;width: 259 ;"></a>
                                                 </div>
                                                 <div class="sp-product-content"><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
-                                                    <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
+                                                    <a href="https://wa.me/+62895322050880 " class="btn btn-primary">Order Now</a>
                                                     </div>
                                                 </div>
                                               </div>
@@ -217,7 +211,7 @@ product/tradisonal_food_2.jpg" alt="" style="height: 347px;width: 259 ;"></a>
                                                 </div>
                                                 <div class="sp-product-content"><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
-                                                    <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
+                                                    <a href="https://wa.me/+62895322050880 " class="btn btn-primary">Order Now</a>
                                                     </div>
                                                 </div>
                                               </div>
@@ -270,7 +264,7 @@ product/tradisonal_food_2.jpg" alt="" style="height: 347px;width: 259 ;"></a>
                                                 </div>
                                                 <div class="sp-product-content"><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
-                                                    <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
+                                                    <a href="https://wa.me/+62895322050880 " class="btn btn-primary">Order Now</a>
                                                     </div>
                                                 </div>
                                               </div>
@@ -321,7 +315,7 @@ product/tradisonal_food_2.jpg" alt="" style="height: 347px;width: 259 ;"></a>
                                                 </div>
                                                 <div class="sp-product-content"><h6 class="title"><a href="<?php echo base_url('Produkdetail') ?>/`+value.id_produk+`"> `+value.nama_produk+`</a></h6><span class="">Mitra : `+value.nama_mitra+` </span>
                                                     <div class="sp-cart-wrap">
-                                                    <a href="https://wa.me/+6281461216787 " class="btn btn-primary">Order Now</a>
+                                                    <a href="https://wa.me/+62895322050880 " class="btn btn-primary">Order Now</a>
                                                     </div>
                                                 </div>
                                               </div>
