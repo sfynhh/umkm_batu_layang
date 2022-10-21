@@ -117,7 +117,8 @@ class Produk extends BaseController
 								]
 				];
 
-		echo view('customer/headnav', $data);
+
+		//echo view('customer/headnav', $data);
 	}
 	public function search()
 	{
