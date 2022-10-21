@@ -186,7 +186,11 @@
                             <span class="nav-text">Produk Saya</span>
                         </a>
                     </li>
-                    
+                     <li class="<?php echo (isset($active))? $active :'' ?>"><a href="<?php echo base_url('foto_produk') ?>">
+                            <i class="fa-solid fa-images"></i>
+                            <span class="nav-text">foto_produk</span>
+                        </a>
+                    </li>
                     
 					
                 </ul>

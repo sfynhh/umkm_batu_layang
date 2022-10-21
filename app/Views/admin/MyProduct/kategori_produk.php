@@ -64,24 +64,24 @@
 
             <div class="card-body">
                 <div class="basic-form">
-                 <form id="frmtambah">
-                    
-                    <div class="mb-3">
-                        <label class="mb-1"><strong>Nama kategori</strong></label>
-                        <input type="text" class="form-control form-custom " name="nama_kategori" aria-describedby="emailHelp" placeholder="nama kategori" value="<?= set_value('nama_kategori') ?>">
-                    </div>
-
-                    <div id="nama_kategori">
+                     <form id="frmtambah">
                         
-                    </div>
-                  <div class="text-center mt-4">
-                    <button type="button" class="btn btn-primary btn-block" onclick="add()">Tambah Data</button>
+                        <div class="mb-3">
+                            <label class="mb-1"><strong>Nama kategori</strong></label>
+                            <input type="text" class="form-control form-custom " name="nama_kategori" aria-describedby="emailHelp" placeholder="nama kategori" value="<?= set_value('nama_kategori') ?>">
+                        </div>
+
+                        <div id="nama_kategori">
+                            
+                        </div>
+                        <div class="text-center mt-4">
+                        <button type="button" class="btn btn-primary btn-block" onclick="add()">Tambah Data</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
-</div>
 </div>
 
 
@@ -90,7 +90,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Data User</h5>
+                <h5 class="modal-title">Ubah Data Kategori</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal">
                 </button>
             </div>
@@ -117,7 +117,7 @@
 </div>
 </div>
 
-    <?php } ?>
+<?php } ?>
 
 <script type="text/javascript">
    function edit(id)

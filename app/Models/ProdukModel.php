@@ -22,9 +22,21 @@ class ProdukModel extends Model
         return $query;
     }
 
+    public function addfotoproduct($data)
+    {
+        $query = $this->db->table('m_foto_produk')->insert($data);
+        return $query;
+    }
+
      public function updateproduct($data, $id)
     {
          $query = $this->db->table('m_produk')->update($data, array('id_produk' => $id));
+        return $query;
+    }
+
+    public function editfotoproduct($data, $id)
+    {
+         $query = $this->db->table('m_foto_produk')->update($data, array('id_foto' => $id));
         return $query;
     }
     public function addKategori($data)
@@ -85,6 +97,36 @@ class ProdukModel extends Model
     return $query;
 
     }
+
+    public function getfotoall()
+    {
+        $query = $this->db->table('m_foto_produk')->select('*')
+            ->join('m_produk', 'm_produk.id_produk=m_foto_produk.id_produk')
+            ->join('m_mitra', 'm_produk.produk_id_mitra=m_mitra.id_mitra')->get()->getResultArray();
+        return $query;
+    }
+
+  
+
+    public function getfotobymitra($id)
+    {
+        $query = $this->db->table('m_foto_produk')->select('*')
+            ->join('m_produk', 'm_produk.id_produk=m_foto_produk.id_produk')
+            ->join('m_mitra', 'm_produk.produk_id_mitra=m_mitra.id_mitra')
+            ->where('m_mitra.id_mitra', $id)
+            ->get()->getResultArray();
+        return $query;
+    }
+
+    public function fotobyidproduk($id)
+    {
+        $query = $this->db->table('m_foto_produk')->select('*')
+            ->join('m_produk', 'm_produk.id_produk=m_foto_produk.id_produk')
+            ->join('m_mitra', 'm_produk.produk_id_mitra=m_mitra.id_mitra')
+            ->where('m_foto_produk.id_produk', $id)
+            ->get()->getResultArray();
+        return $query;
+    }
     public function getprodukbykategori($id){
 
     $query = $this->db->table('m_produk')->select('*')
@@ -124,6 +166,12 @@ class ProdukModel extends Model
     public function deleteProduk($id)
     {
         $query = $this->db->table($this->table)->delete(array('id_produk' => $id));
+        return $query;
+    }
+
+     public function deletefotoProduk($id)
+    {
+        $query = $this->db->table('m_foto_produk')->delete(array('id_foto' => $id));
         return $query;
     }
     public function deleteKategori($id)

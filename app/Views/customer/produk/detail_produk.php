@@ -26,14 +26,28 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
+
                             <div class="shop-details-flex-wrap">
+                                 <div class="shop-details-nav-wrap">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <?php foreach($foto_produk as $key => $val) {?>
+                                            <li class="nav-item" role="presentation"> 
+                                            <a class="nav-link <?= ($key==0)?'active':'' ?> " id="item-<?= $val['id_foto'] ?>-tab" data-toggle="tab" href="#item-<?= $val['id_foto'] ?>" role="tab" aria-controls="item-<?= $val['id_foto'] ?>" aria-selected="true"><img src="<?php echo base_url('/assetcustomer/img/'.$val['path_foto']) ?>" alt=""></a>
+                                        </li>
+                                        <?php } ?>
+                                        
+                                    </ul>
+                                </div>
                                 <div class="shop-details-img-wrap">
                                     <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="item-one" role="tabpanel" aria-labelledby="item-one-tab">
+                                         <?php foreach($foto_produk as $key => $val) {?>
+                                             <div class="tab-pane fade show <?= ($key==0)?'active':'' ?>" id="item-<?= $val['id_foto'] ?>" role="tabpanel" aria-labelledby="item-<?= $val['id_foto'] ?>-tab">
                                             <div class="shop-details-img">
-                                                <img src="<?php echo base_url('/assetcustomer/img/'.$produkdetail['foto_depan']) ?>" style="height: 604px; width: 579px;" alt="">
+                                                <img src="<?php echo base_url('/assetcustomer/img/'.$val['path_foto']) ?>" style="height: 604px; width: 579px;" alt="">
                                             </div>
                                         </div>
+                                         <?php } ?>
+                                       
                                     </div>
                                 </div>
                             </div>

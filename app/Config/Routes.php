@@ -41,6 +41,7 @@ $routes->get('Mitra', 'Mitra::index');
 $routes->get('ProdukList/(:any)', 'Produk::produk_all/$1');
 $routes->get('ProdukSearch/(:any)/(:any)', 'Produk::produksearch/$1/$2');
 $routes->get('Produkjson', 'Produk::produk_json');
+$routes->get('foto_produk', 'MyProduct::foto_produk');
 $routes->get('Produkdetail/(:any)', 'Produk::detail_produk/$1');
 
 $routes->get('TambahProduk', 'MyProduct::tambah');

@@ -366,5 +366,71 @@ class MyProduct extends BaseController
 
     }
 
+    public function foto_produk()
+    {
+     (in_groups('superadmin')) ? $getproduk=$this->ProM->getfotoall() : $getproduk=$this->ProM->getfotobymitra($_SESSION['id_mitra']);
+     (in_groups('superadmin')) ? $getnamaproduk=$this->ProM->getprodukall() : $getnamaproduk=$this->ProM->getprodukbymitra($_SESSION['id_mitra']);
+        //$getproduk=$this->ProM->getfotoall();
+        $data =[
+                'titletab'=>'UMKM BATU LAYANG | Foto Produk Saya',
+                'contenttit'=>'Foto Produk',
+                'active'=>'active',
+                'content'=>'admin/MyProduct/foto_produk',
+                'datacontent'=>[
+                                'Getproduk'=>$getproduk,
+                                'getnamaproduk'=>$getnamaproduk,
+                                'kategori'=>$this->ProM->getkategori()
+                                ]
+                ];
+
+       // print_r($getproduk);
+       echo view('admin/headnav', $data);
+    }
+
+    public function tambahfoto(){
+        $filefoto =$this->request->getFile('foto_produk');
+        $id_produk =$this->request->getPost('id_produk');
+         if ($filefoto->getError()==4) {
+             $namafoto='default.jpg';
+         }else{
+             $filefoto->move('assetcustomer/img/product');
+             $namafoto=$filefoto->getName();
+         }
+
+         $data=array(
+                    "path_foto"=>'product/'.$namafoto,
+                    "id_produk"=>$id_produk
+                );
+
+          $this->ProM->addfotoproduct($data);
+         return redirect()->to('foto_produk');
+    }
+    public function deletefotoproduk()
+    {
+        $id = $this->request->getPost('id_foto');
+        $this->ProM->deletefotoProduk($id);
+        unlink('assetcustomer/img/'.$this->request->getPost('filegambar'));
+        echo json_encode(array('status' => 'ok;', 'text' => ''));
+
+    }
+    public function ubahdatafoto(){
+        $filefoto =$this->request->getFile('foto_produk');
+        $id_foto=$this->request->getPost('id_foto');
+         $id_produk=$this->request->getPost('id_produk');
+         //print_r($filefoto);
+             if ($filefoto->getError()==4) {
+                 $namafoto=$this->request->getPost('foto_produk_old');
+             }else{
+                 $filefoto->move('assetcustomer/img/product');
+                 $namafoto=$filefoto->getName();
+             }
+        $data=array(
+                    "path_foto"=>'product/'.$namafoto,
+                    "id_produk"=>$id_produk
+                );
+
+        $this->ProM->editfotoproduct($data, $id_foto);
+         return redirect()->to('foto_produk');
+    }
    
 }

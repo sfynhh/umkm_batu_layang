@@ -63,6 +63,6 @@ class Filters extends BaseConfig
 	 * @var array
 	 */
 	public $filters = [
-				 'login' => ['before' => ['Seller', 'MyProduct','TambahProduk', 'UpdateProduk/*', 'MyProduct/tambah','MyProduct/updateProduk/*', 'User', 'DaftarMitra', 'Pemilik', 'KategoriProduk' ]]
+				 'login' => ['before' => ['Seller', 'MyProduct','TambahProduk', 'UpdateProduk/*', 'MyProduct/tambah','MyProduct/updateProduk/*', 'User', 'DaftarMitra', 'Pemilik', 'KategoriProduk', 'foto_produk' ]]
 				];
 }

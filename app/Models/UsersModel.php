@@ -116,7 +116,7 @@ class UsersModel extends Model
     // }
     public function deleteUser($id)
     {
-        $query = $this->db->table('Users')->delete(array('id' => $id));
+        $query = $this->db->table('users')->delete(array('id' => $id));
         return $query;
     }
 }

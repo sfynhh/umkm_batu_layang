@@ -112,7 +112,8 @@ class Produk extends BaseController
 								'kategori'=>$this->PM->getkategori(),
 								'mitra' =>$this->MM->getmitra(),
 								'produk'=>$this->PM->getprodukall(),
-								'produkdetail'=>$this->PM->produkdetail($id)
+								'produkdetail'=>$this->PM->produkdetail($id),
+								'foto_produk'=>$this->PM->fotobyidproduk($id)
 								]
 				];
 
@@ -122,10 +123,7 @@ class Produk extends BaseController
 	{
 		return redirect()->to(base_url('ProdukSearch/'.$_POST['kategori'].'/'.$_POST['namaproduk'])); 
 	}
-	public function produksearch($kategori, $nama)
-	{
-		
-	}	
+	
 }
 
 ?>
