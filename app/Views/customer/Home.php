@@ -148,7 +148,7 @@ product/discount_img03.jpg" alt="">
                                 </div>
                                 <div class="coupon-code-wrap">
                                     <h5 class="code">ganic21abs</h5>
-                                    <img src="<?php echo base_url('') ?>/assetcustomer/img/
+                                    <img src="<?php// echo base_url('') ?>/assetcustomer/img/
 images/coupon_code.png" alt="">
                                 </div>
                             </div>

@@ -37,8 +37,7 @@
                             <span class="sub-title">About us</span>
                             <h2 class="title">UMKM Batu Layang, Bandung Barat</h2>
                         </div>
-                        <p>Kamin ipsum is simply dummy the prinng and tysetting industry. Lorem ipsum has been the industry's standard dummy everince
-                        when unknown printer took galley.</p>
+                        <p>UMKM Batu layang Merupakan salah satu umkm di daerah bandung barat, umkm ini telah di dukung dan dikembangkan oleh mahasiswa telkom univesity melalui program pemerintah yaitu PROGRAM PEMBERDAYAAN MASYARAKAT DESA (P2MD)</p>
                         <div class="ingredients-fact">
                             <ul>
                                 <li>
