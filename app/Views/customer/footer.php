@@ -42,7 +42,7 @@
                                     <ul>
                                         <li>
                                            <div class="icon"><i class="flaticon-telephone-1"></i></div>
-                                            <p class="number"><a href="tel:621277257285">+62 1277 2572 85</a></p> 
+                                            <p class="number"><a href="tel:621277257285">+62 8122 1556 953</a></p> 
                                         </li>
                                     </ul>
                                 </div>

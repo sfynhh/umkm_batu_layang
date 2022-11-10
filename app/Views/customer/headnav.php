@@ -62,7 +62,7 @@
                                             <?php } ?>
                                         </select>
                                         <input type="text" placeholder="Search Nama Produk" id="namaproduk" name="namaproduk">
-                                        
+                                
                                         <button type="submit" name="cari"><i class="flaticon-loupe-1"></i></button>
                                     </form>
                                 </div>
@@ -70,7 +70,7 @@
                                     <ul>
                                         <li class="header-phone">
                                             <div class="icon"><i class="flaticon-telephone"></i></div>
-                                            <a href="tel:1234566789"><span>Hubungi Kami</span>+62 1277 2572 85</a>
+                                            <a href="tel:1234566789"><span>Hubungi Kami</span>+62 8122 1556 953</a>
                                         </li>
                                         <li class="header-user"><a href="#"><i class="flaticon-user"></i></a></li>
                                         <!-- <li class="header-wishlist">
