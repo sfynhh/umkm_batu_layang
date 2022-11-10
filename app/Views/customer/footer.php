@@ -9,10 +9,8 @@
                                 </div>
                                 <div class="footer-social">
                                     <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="https://instagram.com/p2mddpmfittelu?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram"></i></a></li>
+                                       
                                     </ul>
                                 </div>
                                <!--  <div class="fw-link">
@@ -71,7 +69,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-6">
                             <div class="copyright-text">
-                                <p> Develop By Mahasiswa Telkom University 2020</p>
+                                <p> Develop By Mahasiswa Telkom University 2022</p>
                             </div>
                         </div>
                         <div class="col-md-6">
