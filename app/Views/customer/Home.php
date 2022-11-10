@@ -137,7 +137,7 @@ product/discount_img03.jpg" alt="">
             <!-- special-products-area-end -->
 
             <!-- coupon-area -->
-            <div class="coupon-area gray-bg pb-80">
+          <!--   <div class="coupon-area gray-bg pb-80">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -155,7 +155,7 @@ images/coupon_code.png" alt="">
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- coupon-area-end -->
 
 
