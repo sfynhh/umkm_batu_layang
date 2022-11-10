@@ -129,11 +129,8 @@
                                     </div>
                                     <div class="social-links">
                                         <ul class="clearfix">
-                                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                            <li><a href="https://instagram.com/p2mddpmfittelu?igshid=YmMyMTA2M2Y="><span class="fab fa-instagram"></span></a></li>
+                                           
                                         </ul>
                                     </div>
                                 </nav>
