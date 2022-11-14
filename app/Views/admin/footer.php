@@ -4,7 +4,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>UMKM Batu Layang; Developed by <a href="https://dexignlab.com/" target="_blank">Mahasiswa Telkom University</a> 2019</p>
+                <p>UMKM Batu Layang; Developed by <a href="https://dexignlab.com/" target="_blank">Mahasiswa Telkom University</a> 2022</p>
             </div>
         </div>
         <!--**********************************
