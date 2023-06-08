@@ -124,27 +124,7 @@ class Mitra extends BaseController
         echo json_encode(array('status' => 'ok;', 'text' => ''));
     }
 
-    public function tesemail(){
-    	 $this->email->setFrom('sirentapp@gmail.com','SiRent Activation');   
-        $this->email->setTo('sofyanhady81@gmail.com');
-        $this->email->setSubject('Kode Aktivasi akun Bre Store');
-        $this->email->setMessage('<div style="width : 60%; color:black;"><h2 style="text-align:center; color:black; ">Si Rent</h2>
-                                    <p style="position: relative;top:-20px;font-size:14px;text-align:center; color:black;">Rental Kendaraan Ternyaman</p>
-                                    <hr>
-                                    <p style="color:black;">Hallo ,</p>
-                                    <p style="color:black;">Terimkasih sudah bergabung dan menjadi costumer Si Rent</p>
-                                    <p style="color:black;">Proses Registrasi sebentar lagi selesai! Silahkan Verifikasi Akun anda dengan memasukan kode aktifasi dibawah ini </p><br>
-                                    <p style="color:black;"><strong style="text-align:center;">Kode Verifikasi : </strong></p><br>
-                                    <p style="color:black;">Salam Hangat,</p>
-                                    <p style="color:black;">Sirent Team</p>
-                                    <hr>');
-         $this->email->setHeader('Header1', 'Value1');
-        if (!$this->email->send()) {
-            return false;
-        }else{
-            return true;
-        }
-    }
+   
 }
 
 ?>
